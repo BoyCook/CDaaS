@@ -1,10 +1,22 @@
 var should = require('should');
+var Service = require('../lib/service').Service;
 
-describe('Object', function () {
-    describe('#function', function () {
-        it('should work', function () {
-            var status = true;
-            status.should.be.true;
-        });
+describe('Service', function () {
+	var service = undefined;
+	before(function(){
+		var service = new Service();
+	})
+
+    describe('#toDate', function () {
+
     });
+    describe('#toEventAtDate', function () {
+
+    });    
+    describe('#fromAmount', function () {
+
+    });   
+    describe('#fromAmountForEvent', function () {
+
+    });             
 });

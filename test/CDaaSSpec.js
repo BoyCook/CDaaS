@@ -11,12 +11,35 @@ describe('CDaaS', function () {
 
     });
 
+    describe('#getAmountBetweenDates', function () {
+
+    });
+
     describe('#getAmountReadable', function () {
-        it('should work', function () {
-            var amount = core.
-            	getAmountBetweenDates(new Date('2013-09-25 15:40'), new Date('2013-09-22 13:00'));
+        it('should work for years', function () {
+            var amount = core.getAmountBetweenDates(new Date('2013-09-25 15:42:06'), new Date('2011-12-01 17:00:01'));
             var readable = core.getAmountReadable(amount);
-            console.log('Readable [%s]', readable);
+            readable.should.eql('1 years 298 days 21 hours 42 minutes 5 seconds');
         });
+        it('should work for days', function () {
+            var amount = core.getAmountBetweenDates(new Date('2013-09-25 15:42:06'), new Date('2013-09-22 17:00:01'));
+            var readable = core.getAmountReadable(amount);
+            readable.should.eql('2 days 22 hours 42 minutes 5 seconds');
+        });        
+        it('should work for hours', function () {
+            var amount = core.getAmountBetweenDates(new Date('2013-09-25 15:42:06'), new Date('2013-09-25 13:00:01'));
+            var readable = core.getAmountReadable(amount);
+            readable.should.eql('2 hours 42 minutes 5 seconds');
+        });                
+        it('should work for minutes', function () {
+            var amount = core.getAmountBetweenDates(new Date('2013-09-25 15:42:06'), new Date('2013-09-25 15:40:01'));
+            var readable = core.getAmountReadable(amount);
+            readable.should.eql('2 minutes 5 seconds');
+        });                
+        it('should work for seconds', function () {
+            var amount = core.getAmountBetweenDates(new Date('2013-09-25 15:40:06'), new Date('2013-09-25 15:40:01'));
+            var readable = core.getAmountReadable(amount);
+            readable.should.eql('5 seconds');
+        });                
     });    
 });
