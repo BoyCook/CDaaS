@@ -1,0 +1,26 @@
+{
+  "name": "cdaas",
+  "version": "0.0.1-RC01",
+  "author": "BoyCook",
+  "description": "CDaaS (Count Down as a Service) provides a RESTful service for creating countdowns",
+  "contributors": [
+    {
+      "name": "Craig Cook",
+      "id": "BoyCook"
+    }
+  ],
+  "scripts": {
+    "test": "make test-cov"
+  },
+  "main": "./lib/server",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/BoyCook/CDaaS.git"
+  },
+  "keywords": [],
+  "dependencies": {},
+  "devDependencies": {},
+  "engines": {
+    "node": ">=0.6"
+  }
+}
