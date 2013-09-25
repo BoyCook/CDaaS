@@ -7,5 +7,18 @@
 ## About
 CDaaS (Count Down as a Service) provides a RESTful service for creating countdowns
 
-## Actions
+## API
+
+* `/to/:date`
+* `/to/:event/at/:date`
+* `/from/:timeamount`
+* `/from/:timeamount/for/:event`
+
+## Params
+
+* `date` - date in format of `YYYYMMddHHmmss` e.g. `20130925181232` means `2013-09-25 18:12:32`
+* `event` - name of the event being counted down to
+* `timeamount` - time amount in ms
+
+## Building
 * `make test` runs the tests
