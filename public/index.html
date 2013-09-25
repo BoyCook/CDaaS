@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+
+</head>
+<body>
+<div id="readme" class="blob instapaper_body">
+    <article class="markdown-body entry-content" itemprop="mainContentOfPage">
+        <h2><a name="about" class="anchor" href="#about"><span class="octicon octicon-link"></span></a>About</h2>
+        <p>CDaaS (Count Down as a Service) provides a RESTful service for creating countdowns</p>
+        <h2><a name="api" class="anchor" href="#api"><span class="octicon octicon-link"></span></a>API</h2>
+        <ul>
+            <li><code>/to/:date</code></li>
+            <li><code>/to/:event/at/:date</code></li>
+            <li><code>/from/:timeamount</code></li>
+            <li><code>/from/:timeamount/for/:event</code></li>
+        </ul>
+        <h2>
+            <a name="params" class="anchor" href="#params"><span class="octicon octicon-link"></span></a>Params</h2>
+        <ul>
+            <li>
+                <code>date</code> - date in format of <code>YYYYMMddHHmmss</code> e.g. <code>20130925181232</code>
+                means <code>2013-09-25 18:12:32</code>
+            </li>
+            <li>
+                <code>event</code> - name of the event being counted down to
+            </li>
+            <li>
+                <code>timeamount</code> - time amount in ms
+            </li>
+        </ul>
+        <h2>
+            URIs
+        </h2>
+        <ul>
+            <li><a href="http://cdaas.herokuapp.com" target="_blank">Heroku Service</a></li>            
+            <li><a href="https://github.com/BoyCook/CDaaS" target="_blank">GitHub</a></li>
+        </ul>
+    </article>
+</div>
+</body>
+</html>
