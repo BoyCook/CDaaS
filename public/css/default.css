@@ -1,0 +1,12 @@
+
+body{
+	font-size: 100%;
+}
+
+.amount {
+	font-size: 2em;
+}
+
+.desc p, .desc h5 {
+	display: inline-block;
+}
