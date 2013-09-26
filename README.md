@@ -5,7 +5,7 @@
 [![NPM](https://nodei.co/npm/cdaas.png?downloads=true)](https://nodei.co/npm/cdaas) 
 
 ## About
-CDaaS (Count Down as a Service) provides a RESTful service for creating countdowns
+CDaaS (CountDown as a Service) provides a RESTful service for creating countdowns
 
 ## Service URIs
 * http://cdaas.co.uk
