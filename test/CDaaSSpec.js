@@ -19,7 +19,7 @@ describe('CDaaS', function () {
         it('should work for years', function () {
             var amount = core.getAmountBetweenDates(new Date('2013-09-25 15:42:06'), new Date('2011-12-01 17:00:01'));
             var readable = core.getAmountReadable(amount);
-            readable.should.eql('1 years 298 days 21 hours 42 minutes 5 seconds');
+            readable.should.eql('1 year 298 days 21 hours 42 minutes 5 seconds');
         });
         it('should work for days', function () {
             var amount = core.getAmountBetweenDates(new Date('2013-09-25 15:42:06'), new Date('2013-09-22 17:00:01'));
@@ -41,5 +41,20 @@ describe('CDaaS', function () {
             var readable = core.getAmountReadable(amount);
             readable.should.eql('5 seconds');
         });                
+    });    
+
+    describe('#buildString', function() {
+        it('include year when present', function () {
+            var result = core.buildString(1, 0, 0, 0, 0);
+            result.should.eql('1 year');
+        });
+        it('include years when present', function () {
+            var result = core.buildString(2, 0, 0, 0, 0);
+            result.should.eql('2 years');
+        });        
+    });
+
+    describe('#parseDate', function() {
+
     });    
 });
