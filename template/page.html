@@ -11,7 +11,14 @@
 			<section class="counter">
 				<h1 class="amount">{{this.amountreadable}}</h1>
 			</section>
-			<section class="desc">to go until <h5 class="event">{{this.event}}</h5></section>
+			<section class="desc">
+                to go until <h5 class="event">{{this.event}}</h5>
+                {{#if this.date}}
+                    on {{this.datereadable}}
+                {{/if}}                
+            </section>
 		</section>
     </body>
+    <script type="text/javascript" src="/js/jquery-1.8.2.min.js"></script>
+    <script type="text/javascript" src="/js/default.js"></script>
 </html>
