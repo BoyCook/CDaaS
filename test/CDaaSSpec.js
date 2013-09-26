@@ -44,49 +44,53 @@ describe('CDaaS', function () {
     });    
 
     describe('#buildString', function() {
-        it('include year when present', function () {
+        it('should include year when present', function () {
             var result = core.buildString(1, 0, 0, 0, 0);
             result.should.eql('1 year');
         });
-        it('include years when present', function () {
+        it('should include years when present', function () {
             var result = core.buildString(2, 0, 0, 0, 0);
             result.should.eql('2 years');
         });        
-        it('include day when present', function () {
+        it('should include day when present', function () {
             var result = core.buildString(0, 1, 0, 0, 0);
             result.should.eql('1 day');
         });
-        it('include days when present', function () {
+        it('should include days when present', function () {
             var result = core.buildString(0, 2, 0, 0, 0);
             result.should.eql('2 days');
         });        
-        it('include day when present', function () {
+        it('should include day when present', function () {
             var result = core.buildString(0, 0, 1, 0, 0);
             result.should.eql('1 hour');
         });
-        it('include days when present', function () {
+        it('should include days when present', function () {
             var result = core.buildString(0, 0, 2, 0, 0);
             result.should.eql('2 hours');
         });        
-        it('include day when present', function () {
+        it('should include day when present', function () {
             var result = core.buildString(0, 0, 0, 1, 0);
             result.should.eql('1 minute');
         });
-        it('include days when present', function () {
+        it('should include days when present', function () {
             var result = core.buildString(0, 0, 0, 2, 0);
             result.should.eql('2 minutes');
         });                        
-        it('include day when present', function () {
+        it('should include day when present', function () {
             var result = core.buildString(0, 0, 0, 0, 1);
             result.should.eql('1 second');
         });
-        it('include days when present', function () {
+        it('should include days when present', function () {
             var result = core.buildString(0, 0, 0, 0, 2);
             result.should.eql('2 seconds');
         });                
     });
 
     describe('#parseDate', function() {
-
+        it('should work for a date string', function(){
+            var expected = new Date('2013-09-25 15:01');
+            var result = core.parseDate('201309251501');
+            result.should.eql(expected);
+        });
     });    
 });
