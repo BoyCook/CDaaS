@@ -1,2 +1,2 @@
 
-require('./lib/server.js').startUp({ port: process.env.PORT || 5000 });
+require('./lib/server.js').startUp({ port: process.env.PORT || 8080 });

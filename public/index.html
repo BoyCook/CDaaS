@@ -2,32 +2,47 @@
 <html class="no-js">
 <head>
     <title>CDaaS - CountDown as a Service</title>
-    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="description" content="CDaaS - CountDown as a Service">
+    <meta name="keywords" content="CDaaS CountDown as a Service count down">
+    <meta name="author" content="Craig Cook">    
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/default.css" type="text/css">
 </head>
 <body>
     <article>
-        <h2><a name="about" class="anchor" href="#about"><span class="octicon octicon-link"></span></a>About</h2>
-        <p>CDaaS (CountDown as a Service) provides a RESTful service for creating countdowns</p>
-        <h2><a name="api" class="anchor" href="#api"><span class="octicon octicon-link"></span></a>API</h2>
+        <h2>About</h2>
+        <p>
+            CDaaS (CountDown as a Service) provides a RESTful service for creating countdowns. This is very much a work in progress at the moment so please bear with any issues.
+        </p>
+        <h2>API</h2>
         <ul>
             <li><code>/to/:date</code></li>
             <li><code>/to/:event/at/:date</code></li>
             <li><code>/from/:timeamount</code></li>
             <li><code>/from/:timeamount/for/:event</code></li>
         </ul>
-        <h2>
-            <a name="params" class="anchor" href="#params"><span class="octicon octicon-link"></span></a>Params</h2>
+        <h2>Params</h2>
         <ul>
             <li>
-                <code>date</code> - date in format of <code>YYYYMMddHHmmss</code> e.g. <code>20130925181232</code>
-                means <code>2013-09-25 18:12:32</code>
+                <code>date</code> - date in format of <code>YYYYMMddHHmmss</code> e.g. <code>20130925181232</code> means <code>2013-09-25 18:12:32</code>
             </li>
             <li>
-                <code>event</code> - name of the event being counted down to
-            </li>
+                <code>event</code> - name of the event being counted down to</li>
             <li>
                 <code>timeamount</code> - time amount in ms
+            </li>
+            <li>
+                <code>unit</code> - the amount unit <code>[date|years|days|hours|minutes|seconds|milliseconds]</code> / <code>[dt|y|d|h|m|s|ms]</code>
+            </li>
+            <li>
+                <code>mgs</code> - the message to display when the countdown is complete (must have <code>tick=true</code>)
+            </li>
+            <li>
+                <code>tick</code> - <code>[true|false]</code> - (default is false) should the HTML page have an active countdown? 
+            </li>
+            <li>
+                <code>css</code> - the URI for custom CSS to be applied to HTML
             </li>
         </ul>
         <h2>
@@ -38,6 +53,11 @@
             <li><a href="http://cdaas.herokuapp.com" target="_blank">Heroku Service</a></li>            
             <li><a href="https://github.com/BoyCook/CDaaS" target="_blank">GitHub</a></li>
         </ul>
+        <h2>Examples</h2>
+        <ul>
+            <li>Counting down to Christmas 2013: <a href="http://cdaas.co.uk/to/Christmas/at/20131225" target="_blank">http://cdaas.co.uk/to/Christmas/at/20131225</a></li>
+            <li>Counting from 10 minutes to time a presentation: <a href="http://cdaas.co.uk/from/10/for/Presentation%20end" target="_blank">http://cdaas.co.uk/from/10/for/Presentation%20end</a></li>
+        </ul>        
     </article>
 </body>
 </html>

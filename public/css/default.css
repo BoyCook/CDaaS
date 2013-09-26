@@ -10,3 +10,14 @@ body{
 .desc p, .desc h5 {
 	display: inline-block;
 }
+
+code {
+	margin: 0 2px;
+	padding: 0px 5px;
+	border: 1px solid #ddd;
+	background-color: #f8f8f8;
+	border-radius: 3px;
+	font-family: Consolas, "Liberation Mono", Courier, monospace;
+	font-size: 12px;	
+	white-space: nowrap;
+}
