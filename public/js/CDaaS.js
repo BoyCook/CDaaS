@@ -114,4 +114,6 @@ CDaaS.prototype.toFull = function(v) {
     return v;
 };
 
-exports.CDaaS = CDaaS;
+if (!(typeof exports === "undefined")) {
+    exports.CDaaS = CDaaS;
+}

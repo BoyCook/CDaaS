@@ -1,5 +1,5 @@
 var should = require('should');
-var CDaaS = require('../lib/CDaaS').CDaaS;
+var CDaaS = require('../public/js/CDaaS').CDaaS;
 
 describe('CDaaS', function () {
 	var core = undefined;
