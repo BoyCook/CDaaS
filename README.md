@@ -12,15 +12,19 @@ CDaaS (CountDown as a Service) provides a RESTful service for creating countdown
 * http://cdaas.herokuapp.com
 
 ## API
-* `/to/:date`
-* `/to/:event/at/:date`
-* `/from/:timeamount`
-* `/from/:timeamount/for/:event`
+* `/to/:date` - countdown to a date
+* `/to/:event/at/:date` - countdown to an event at a date
+* `/from/:timeamount` - countdown from an amount of time
+* `/from/:timeamount/for/:event` - countdown from an amount of time for an event
 
 ## Params
 * `date` - date in format of `YYYYMMddHHmmss` e.g. `20130925181232` means `2013-09-25 18:12:32`
 * `event` - name of the event being counted down to
 * `timeamount` - time amount in ms
+
+# Examples
+* Counting down to Christmas 2013: http://cdaas.co.uk/to/Christmas/at/20131225
+* Counting from 10 minutes to time a presentation: http://cdaas.co.uk/from/10/for/Presentation%20end
 
 ## Building
 * `make test` runs the tests
