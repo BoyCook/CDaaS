@@ -52,6 +52,14 @@ describe('CDaaS', function () {
             var result = core.buildString(2, 0, 0, 0, 0);
             result.should.eql('2 years');
         });        
+        it('include month when present', function () {
+            var result = core.buildString(0, 1, 0, 0, 0);
+            result.should.eql('1 month');
+        });
+        it('include months when present', function () {
+            var result = core.buildString(0, 2, 0, 0, 0);
+            result.should.eql('2 months');
+        });        
     });
 
     describe('#parseDate', function() {
