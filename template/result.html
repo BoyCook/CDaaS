@@ -4,14 +4,16 @@
         <title>CDaaS - countdown to {{this.event}}</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/css/default.css" type="text/css">
     </head>
     <body>
 		<section>
-			<section>{{this.remaining}}</section>
-			<section>{{this.datereadable}}</section>
-			<section>{{this.event}}</section>
-			<section>{{this.amount}}</section>
-			<section>{{this.amountreadable}}</section>
+			<section class="counter">
+				<h1 class="amount">{{this.amountreadable}}</h1>
+			</section>
+			<section class="desc">
+				<p>to go until {{this.event}} on {{this.datereadable}}</p>
+			</section>
 		</section>
     </body>
 </html>
