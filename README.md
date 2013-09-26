@@ -20,7 +20,7 @@ This is very much a work in progress at the moment so please bear with any issue
 * `event` - name of the event being counted down to
 * `timeamount` - time amount in ms
 * `unit` - the amount unit `[date|years|days|hours|minutes|seconds|milliseconds]` or `[dt|y|d|h|m|s|ms]`
-* `mgs` - the message to display when the countdown is complete (must have `tick=true`)
+* `msg` - the message to display when the countdown is complete (must have `tick=true`)
 * `tick` - [true|false] - (default is false) should the HTML page have an active countdown? 
 * `css` - the URI for custom CSS to be applied to HTML
 
