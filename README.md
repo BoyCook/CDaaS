@@ -5,11 +5,8 @@
 [![NPM](https://nodei.co/npm/cdaas.png?downloads=true)](https://nodei.co/npm/cdaas) 
 
 ## About
-CDaaS (CountDown as a Service) provides a RESTful service for creating countdowns
-
-## Service URIs
-* http://cdaas.co.uk
-* http://cdaas.herokuapp.com
+CDaaS (CountDown as a Service) provides a RESTful service for creating countdowns. 
+This is very much a work in progress at the moment so please bear with any issues.
 
 ## API
 * `/to/:date` - countdown to a date
@@ -25,6 +22,10 @@ CDaaS (CountDown as a Service) provides a RESTful service for creating countdown
 * `mgs` - the message to display when the countdown is complete (must have `tick=true`)
 * `tick` - [true|false] - (default is false) should the HTML page have an active countdown? 
 * `css` - the URI for custom CSS to be applied to HTML
+
+## Service URIs
+* http://cdaas.co.uk
+* http://cdaas.herokuapp.com
 
 # Examples
 * Counting down to Christmas 2013: http://cdaas.co.uk/to/Christmas/at/20131225
