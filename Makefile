@@ -33,3 +33,12 @@ check:
 
 clean:
 	rm -rf ./coverage
+
+heroku-stop:
+	heroku ps:stop web=1
+
+heroku-push:
+	git push heroku master
+
+heroku-open:
+	heroku open
