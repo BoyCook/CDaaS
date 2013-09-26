@@ -52,14 +52,38 @@ describe('CDaaS', function () {
             var result = core.buildString(2, 0, 0, 0, 0);
             result.should.eql('2 years');
         });        
-        it('include month when present', function () {
+        it('include day when present', function () {
             var result = core.buildString(0, 1, 0, 0, 0);
-            result.should.eql('1 month');
+            result.should.eql('1 day');
         });
-        it('include months when present', function () {
+        it('include days when present', function () {
             var result = core.buildString(0, 2, 0, 0, 0);
-            result.should.eql('2 months');
+            result.should.eql('2 days');
         });        
+        it('include day when present', function () {
+            var result = core.buildString(0, 0, 1, 0, 0);
+            result.should.eql('1 hour');
+        });
+        it('include days when present', function () {
+            var result = core.buildString(0, 0, 2, 0, 0);
+            result.should.eql('2 hours');
+        });        
+        it('include day when present', function () {
+            var result = core.buildString(0, 0, 0, 1, 0);
+            result.should.eql('1 minute');
+        });
+        it('include days when present', function () {
+            var result = core.buildString(0, 0, 0, 2, 0);
+            result.should.eql('2 minutes');
+        });                        
+        it('include day when present', function () {
+            var result = core.buildString(0, 0, 0, 0, 1);
+            result.should.eql('1 second');
+        });
+        it('include days when present', function () {
+            var result = core.buildString(0, 0, 0, 0, 2);
+            result.should.eql('2 seconds');
+        });                
     });
 
     describe('#parseDate', function() {
