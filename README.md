@@ -8,6 +8,7 @@
 CDaaS (Count Down as a Service) provides a RESTful service for creating countdowns
 
 ## Service URI
+http://cdaas.co.uk
 http://cdaas.herokuapp.com
 
 ## API
