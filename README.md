@@ -21,6 +21,10 @@ CDaaS (CountDown as a Service) provides a RESTful service for creating countdown
 * `date` - date in format of `YYYYMMddHHmmss` e.g. `20130925181232` means `2013-09-25 18:12:32`
 * `event` - name of the event being counted down to
 * `timeamount` - time amount in ms
+* `unit` - the amount unit [date|years|days|hours|minutes|seconds|milliseconds] / [dt|y|d|h|m|s|ms]
+* `mgs` - the message to display when the countdown is complete (must have `tick=true`)
+* `tick` - [true|false] - (default is false) should the HTML page have an active countdown? 
+* `css` - the URI for custom CSS to be applied to HTML
 
 # Examples
 * Counting down to Christmas 2013: http://cdaas.co.uk/to/Christmas/at/20131225
