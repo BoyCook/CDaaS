@@ -18,7 +18,7 @@ This is very much a work in progress at the moment so please bear with any issue
 * `date` - date in format of `YYYYMMddHHmmss` e.g. `20130925181232` means `2013-09-25 18:12:32`
 * `event` - name of the event being counted down to
 * `timeamount` - time amount in ms
-* `unit` - the amount unit [date|years|days|hours|minutes|seconds|milliseconds] / [dt|y|d|h|m|s|ms]
+* `unit` - the amount unit `[date|years|days|hours|minutes|seconds|milliseconds]` or `[dt|y|d|h|m|s|ms]`
 * `mgs` - the message to display when the countdown is complete (must have `tick=true`)
 * `tick` - [true|false] - (default is false) should the HTML page have an active countdown? 
 * `css` - the URI for custom CSS to be applied to HTML
