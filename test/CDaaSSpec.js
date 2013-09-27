@@ -8,24 +8,29 @@ describe('CDaaS', function () {
 	});
 
     describe('#getAmountFromDate', function () {
-
+        // Tricky to test - uses now
     });
 
     describe('#getAmountBetweenDates', function () {
         it('should work for years', function () {
             var amount = core.getAmountBetweenDates(new Date('2013-09-25 15:42:06'), new Date('2011-12-01 17:00:01'));
+            amount.should.eql(57361325000);
         });
         it('should work for days', function () {
             var amount = core.getAmountBetweenDates(new Date('2013-09-25 15:42:06'), new Date('2013-09-22 17:00:01'));
+            amount.should.eql(254525000);
         });        
         it('should work for hours', function () {
             var amount = core.getAmountBetweenDates(new Date('2013-09-25 15:42:06'), new Date('2013-09-25 13:00:01'));
+            amount.should.eql(9725000);
         });                
         it('should work for minutes', function () {
             var amount = core.getAmountBetweenDates(new Date('2013-09-25 15:42:06'), new Date('2013-09-25 15:40:01'));
+            amount.should.eql(125000);
         });                
         it('should work for seconds', function () {
             var amount = core.getAmountBetweenDates(new Date('2013-09-25 15:40:06'), new Date('2013-09-25 15:40:01'));
+            amount.should.eql(5000);
         });                
     });
 
