@@ -1,5 +1,12 @@
 
 function CDaaS() {
+    this.one = {
+        year: 31536000000,
+        day: 86400000,
+        hour: 3600000,
+        minute: 60000,
+        second: 1000   
+    };
 }
 
 CDaaS.prototype.getAmountFromDate = function(date) {
@@ -8,6 +15,21 @@ CDaaS.prototype.getAmountFromDate = function(date) {
 
 CDaaS.prototype.getAmountBetweenDates = function(now, then) {
 	return now - then;
+};
+
+CDaaS.prototype.parseAmount = function(amount) {
+    var years = Math.floor(amount/this.one.year);
+    var days = Math.floor((amount - (this.one.year*years)) / this.one.day);
+    var hours = Math.floor((amount - (this.one.year*years) - (this.one.day*days)) / this.one.hour);
+    var minutes = Math.floor((amount - (this.one.year*years) - (this.one.day*days) - (this.one.hour*hours)) / this.one.minute);
+    var seconds = Math.floor((amount - (this.one.year*years) - (this.one.day*days) - (this.one.hour*hours) - (this.one.minute*minutes)) / this.one.second);
+    return {
+        years: years,
+        days: days,
+        hours: hours,
+        minutes: minutes,
+        seconds: seconds
+    }
 };
 
 CDaaS.prototype.getAmountReadable = function(amount) {

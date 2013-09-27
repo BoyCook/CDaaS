@@ -3,6 +3,11 @@ body{
 	font-size: 100%;
 }
 
+.main {
+	width: 50%;
+	margin: auto;
+}
+
 .amount {
 	font-size: 2em;
 }
