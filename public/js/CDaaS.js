@@ -18,10 +18,10 @@ CDaaS.prototype.getAmountReadable = function(amount) {
     var oneMinute = 60000;
     var oneSecond = 1000;
     var years = Math.floor(amount/oneYear);
-    var days = Math.floor((amount - (oneYear*years))/oneDay);
-	var hours = Math.floor((amount - (oneYear*years) - (oneDay*days)) /oneHour);
-	var minutes = Math.floor((amount - (oneYear*years) - (oneDay*days) - (oneHour*hours)) /oneMinute);
-	var seconds = Math.floor((amount - (oneYear*years) - (oneDay*days) - (oneHour*hours) - (oneMinute*minutes)) /oneSecond);
+    var days = Math.floor((amount - (oneYear*years)) / oneDay);
+	var hours = Math.floor((amount - (oneYear*years) - (oneDay*days)) / oneHour);
+	var minutes = Math.floor((amount - (oneYear*years) - (oneDay*days) - (oneHour*hours)) / oneMinute);
+	var seconds = Math.floor((amount - (oneYear*years) - (oneDay*days) - (oneHour*hours) - (oneMinute*minutes)) / oneSecond);
 	return this.buildString(years, days, hours, minutes, seconds)
 };
 
