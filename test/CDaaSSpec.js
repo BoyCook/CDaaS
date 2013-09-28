@@ -15,6 +15,9 @@ describe('CDaaS', function () {
         it('should work for years', function () {
             var amount = core.getAmountBetweenDates(new Date('2013-09-25 15:42:06'), new Date('2011-12-01 17:00:01'));
             amount.should.eql(57361325000);
+            // new Date().getTimezoneOffset();
+            // var t1 = now.getTime();
+            // var t2 = then.getTime();            
         });
         it('should work for days', function () {
             var amount = core.getAmountBetweenDates(new Date('2013-09-25 15:42:06'), new Date('2013-09-22 17:00:01'));

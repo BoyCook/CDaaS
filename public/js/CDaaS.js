@@ -14,7 +14,7 @@ CDaaS.prototype.getAmountFromDate = function(date) {
 };
 
 CDaaS.prototype.getAmountBetweenDates = function(now, then) {
-	return now.getTime() - then.getTime();
+	return now - then;
 };
 
 CDaaS.prototype.parseAmount = function(amount) {
