@@ -108,7 +108,12 @@ describe('CDaaS', function () {
     });
 
     describe('#parseDate', function() {
-        it('should work for date and time', function(){
+        it('should work for up to seconds', function(){
+            var expected = new Date('2013-09-25 15:01:02');
+            var result = core.parseDate('20130925150102');
+            result.should.eql(expected);
+        });        
+        it('should work for up to minutes', function(){
             var expected = new Date('2013-09-25 15:01');
             var result = core.parseDate('201309251501');
             result.should.eql(expected);
