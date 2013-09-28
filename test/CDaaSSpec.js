@@ -67,45 +67,45 @@ describe('CDaaS', function () {
         });                
     });    
 
-    describe('#buildString', function() {
+    describe('#getAmountReadable', function() {
         it('should include year when present', function () {
-            var result = core.buildString(1, 0, 0, 0, 0);
+            var result = core.getAmountReadable(1, 0, 0, 0, 0);
             result.should.eql('1 year');
         });
         it('should include years when present', function () {
-            var result = core.buildString(2, 0, 0, 0, 0);
+            var result = core.getAmountReadable(2, 0, 0, 0, 0);
             result.should.eql('2 years');
         });        
         it('should include day when present', function () {
-            var result = core.buildString(0, 1, 0, 0, 0);
+            var result = core.getAmountReadable(0, 1, 0, 0, 0);
             result.should.eql('1 day');
         });
         it('should include days when present', function () {
-            var result = core.buildString(0, 2, 0, 0, 0);
+            var result = core.getAmountReadable(0, 2, 0, 0, 0);
             result.should.eql('2 days');
         });        
         it('should include day when present', function () {
-            var result = core.buildString(0, 0, 1, 0, 0);
+            var result = core.getAmountReadable(0, 0, 1, 0, 0);
             result.should.eql('1 hour');
         });
         it('should include days when present', function () {
-            var result = core.buildString(0, 0, 2, 0, 0);
+            var result = core.getAmountReadable(0, 0, 2, 0, 0);
             result.should.eql('2 hours');
         });        
         it('should include day when present', function () {
-            var result = core.buildString(0, 0, 0, 1, 0);
+            var result = core.getAmountReadable(0, 0, 0, 1, 0);
             result.should.eql('1 minute');
         });
         it('should include days when present', function () {
-            var result = core.buildString(0, 0, 0, 2, 0);
+            var result = core.getAmountReadable(0, 0, 0, 2, 0);
             result.should.eql('2 minutes');
         });                        
         it('should include day when present', function () {
-            var result = core.buildString(0, 0, 0, 0, 1);
+            var result = core.getAmountReadable(0, 0, 0, 0, 1);
             result.should.eql('1 second');
         });
         it('should include days when present', function () {
-            var result = core.buildString(0, 0, 0, 0, 2);
+            var result = core.getAmountReadable(0, 0, 0, 0, 2);
             result.should.eql('2 seconds');
         });                
     });

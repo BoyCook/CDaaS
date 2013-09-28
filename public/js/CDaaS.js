@@ -37,12 +37,12 @@ CDaaS.prototype.parseAmount = function(amount) {
     }
 };
 
-CDaaS.prototype.getAmountReadable = function(amount) {
-    var units = this.parseAmount(amount);
-	return this.buildString(units.years, units.days, units.hours, units.minutes, units.seconds);
-};
+// CDaaS.prototype.getAmountReadable = function(amount) {
+//     var units = this.parseAmount(amount);
+// 	return this.buildString(units.years, units.days, units.hours, units.minutes, units.seconds);
+// };
 
-CDaaS.prototype.buildString = function(years, days, hours, minutes, seconds) {
+CDaaS.prototype.getAmountReadable = function(years, days, hours, minutes, seconds) {
     var result = '';
     if (this.greaterThanZero(years)) {
         result += this.timeUnit(years, 'year');
