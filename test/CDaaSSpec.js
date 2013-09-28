@@ -108,10 +108,30 @@ describe('CDaaS', function () {
     });
 
     describe('#parseDate', function() {
-        it('should work for a date string', function(){
+        it('should work for date and time', function(){
             var expected = new Date('2013-09-25 15:01');
             var result = core.parseDate('201309251501');
             result.should.eql(expected);
         });
+        it('should work for up to hour', function(){
+            var expected = new Date('2013-09-25 15:00');
+            var result = core.parseDate('2013092515');
+            result.should.eql(expected);
+        });                
+        it('should work for up to day', function(){
+            var expected = new Date('2013-09-25 00:00');
+            var result = core.parseDate('20130925');
+            result.should.eql(expected);
+        });
+        it('should work for up to month', function(){
+            var expected = new Date('2013-09-01 00:00');
+            var result = core.parseDate('201309');
+            result.should.eql(expected);
+        });                
+        it('should work for up to year', function(){
+            var expected = new Date('2013-01-01 00:00');
+            var result = core.parseDate('2013');
+            result.should.eql(expected);
+        });        
     });    
 });

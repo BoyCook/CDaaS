@@ -37,11 +37,6 @@ CDaaS.prototype.parseAmount = function(amount) {
     }
 };
 
-// CDaaS.prototype.getAmountReadable = function(amount) {
-//     var units = this.parseAmount(amount);
-// 	return this.buildString(units.years, units.days, units.hours, units.minutes, units.seconds);
-// };
-
 CDaaS.prototype.getAmountReadable = function(years, days, hours, minutes, seconds) {
     var result = '';
     if (this.greaterThanZero(years)) {
@@ -91,12 +86,12 @@ CDaaS.prototype.parseDate = function(date) {
     } else if (date.length == 6) {
         //YYYYMM
         return new Date(date.substring(0, 4) + '-' + 
-                        date.substring(4, 6));
+                        date.substring(4, 6) + '-01 00:00:00');
     } else if (date.length == 8) {        
         //YYYYMMdd
         return new Date(date.substring(0, 4) + '-' + 
                         date.substring(4, 6) + '-' + 
-                        date.substring(6, 8));        
+                        date.substring(6, 8) + ' 00:00:00');
     } else if (date.length == 10) {                
         //YYYYMMddHHmmss
         return new Date(date.substring(0, 4) + '-' + 
