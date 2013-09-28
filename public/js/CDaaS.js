@@ -18,11 +18,16 @@ CDaaS.prototype.getAmountBetweenDates = function(now, then) {
 };
 
 CDaaS.prototype.parseAmount = function(amount) {
+    //TODO consider performance improvements
     var years = Math.floor(amount/this.one.year);
-    var days = Math.floor((amount - (this.one.year*years)) / this.one.day);
-    var hours = Math.floor((amount - (this.one.year*years) - (this.one.day*days)) / this.one.hour);
-    var minutes = Math.floor((amount - (this.one.year*years) - (this.one.day*days) - (this.one.hour*hours)) / this.one.minute);
-    var seconds = Math.floor((amount - (this.one.year*years) - (this.one.day*days) - (this.one.hour*hours) - (this.one.minute*minutes)) / this.one.second);
+    var lessYears = amount - (this.one.year*years);
+    var days = Math.floor(lessYears / this.one.day);
+    var lessDays = lessYears - (this.one.day*days);
+    var hours = Math.floor(lessDays / this.one.hour);
+    var lessHours = lessDays - (this.one.hour*hours);
+    var minutes = Math.floor(lessHours / this.one.minute);
+    var lessMinutes = lessHours - (this.one.minute*minutes);
+    var seconds = Math.floor(lessMinutes / this.one.second);
     return {
         years: years,
         days: days,
@@ -33,18 +38,8 @@ CDaaS.prototype.parseAmount = function(amount) {
 };
 
 CDaaS.prototype.getAmountReadable = function(amount) {
-    //TODO divide amount by 1000 factor for improved performance
-    var oneYear = 31536000000;
-    var oneDay = 86400000
-    var oneHour = 3600000;
-    var oneMinute = 60000;
-    var oneSecond = 1000;
-    var years = Math.floor(amount/oneYear);
-    var days = Math.floor((amount - (oneYear*years)) / oneDay);
-	var hours = Math.floor((amount - (oneYear*years) - (oneDay*days)) / oneHour);
-	var minutes = Math.floor((amount - (oneYear*years) - (oneDay*days) - (oneHour*hours)) / oneMinute);
-	var seconds = Math.floor((amount - (oneYear*years) - (oneDay*days) - (oneHour*hours) - (oneMinute*minutes)) / oneSecond);
-	return this.buildString(years, days, hours, minutes, seconds)
+    var units = this.parseAmount(amount);
+	return this.buildString(units.years, units.days, units.hours, units.minutes, units.seconds);
 };
 
 CDaaS.prototype.buildString = function(years, days, hours, minutes, seconds) {
