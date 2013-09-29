@@ -15,6 +15,10 @@ function setValue(cnt) {
 								         amount.minutes, 
 								         amount.seconds)
 	$('.amount').text(text);	
+
+	if (contains(data.warning, cnt)) {
+		$('.warning').text('Warning - ');
+	}
 }
 
 function gotData(response) {
@@ -27,6 +31,15 @@ function gotData(response) {
 	};
 	var countDown = new CountDown(params);
 	countDown.start()
+}
+
+function contains(items, item) {
+    for (var i=0,len=items.length; i < len; i++) {
+        if (items[i] == item) {
+            return true;
+        }
+    }    
+    return false;	
 }
 
 $(document).ready(function () {
