@@ -5,7 +5,12 @@ $(document).ready(function () {
 			target: 0,
 			cnt: data.remaining,
 			setValue: function(cnt) {
-				$('.amount').text(core.getAmountReadable(cnt));
+				var amount = core.parseAmount(cnt);
+				$('.amount').text(core.getAmountReadable(amount.years, 
+												         amount.days, 
+												         amount.hours, 
+												         amount.minutes, 
+												         amount.seconds));
 			}
         };
         var countDown = new CountDown(params);
