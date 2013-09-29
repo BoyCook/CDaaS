@@ -28,6 +28,7 @@ CDaaS.prototype.parseAmount = function(amount) {
     var minutes = Math.floor(lessHours / this.one.minute);
     var lessMinutes = lessHours - (this.one.minute*minutes);
     var seconds = Math.floor(lessMinutes / this.one.second);
+    var lessSeconds = lessMinutes - (this.one.second*seconds);
     return {
         years: years,
         days: days,

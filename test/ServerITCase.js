@@ -23,8 +23,10 @@ describe('CountDown', function () {
                         event: "Finish",
                         unit: "ms",
                         tick: "false",
-                        msg: "",
+                        msg: "Countdown complete",
                         css: "",
+                        overflow: false,
+                        warning: [],                        
                         datereadable: "2013-12-25 00:00:00"
                     });
                     done();
@@ -41,8 +43,10 @@ describe('CountDown', function () {
                         event: "Christmas",
                         unit: "ms",
                         tick: "false",
-                        msg: "",
+                        msg: "Countdown complete",
                         css: "",
+                        overflow: false,
+                        warning: [],
                         datereadable: "2013-12-25 00:00:00"
                     });
                     done();
@@ -59,8 +63,10 @@ describe('CountDown', function () {
                         event: "Christmas",
                         unit: "ms",
                         tick: "false",
-                        msg: "",
+                        msg: "Countdown complete",
                         css: "",
+                        overflow: false,
+                        warning: [],
                         datereadable: "2013-12-25 00:00:00"
                     });
                     done();
@@ -96,8 +102,10 @@ describe('CountDown', function () {
                         event: "Finish",
                         unit: "ms",
                         tick: "false",
-                        msg: "",
-                        css: ""
+                        msg: "Countdown complete",
+                        css: "",
+                        overflow: false,
+                        warning: []
                     });
                     done();
                 });
@@ -113,8 +121,10 @@ describe('CountDown', function () {
                         event: "End of meeting",
                         unit: "ms",
                         tick: "false",
-                        msg: "",
-                        css: ""
+                        msg: "Countdown complete",
+                        css: "",
+                        overflow: false,
+                        warning: []
                     });
                     done();
                 });
