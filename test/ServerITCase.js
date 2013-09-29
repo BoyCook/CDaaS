@@ -1,10 +1,10 @@
 var should = require('should');
 var request = require('request');
-var url = 'http://localhost:8080';
+var url = 'http://localhost:8088';
 var Server = require('../lib/server');
 describe('CountDown', function () {
     before(function (done) {
-        Server.startUp({ port: process.env.PORT || 8080 }, done);
+        Server.startUp({ port: 8088 }, done);
     });
 
     after(function (done) {
@@ -20,7 +20,7 @@ describe('CountDown', function () {
                     fixData(data);
                     data.should.eql({
                         date: "2013-12-25T00:00:00.000Z",
-                        event: "",
+                        event: "Finish",
                         unit: "ms",
                         tick: "false",
                         msg: "",
@@ -77,7 +77,7 @@ describe('CountDown', function () {
                     fixData(data);
                     data.should.eql({
                         date: "",
-                        event: "",
+                        event: "Finish",
                         unit: "ms",
                         tick: "false",
                         msg: "",
@@ -111,4 +111,5 @@ function fixData(data) {
     delete data.amount;
     delete data.remaining;
     delete data.amountreadable;
+    delete data.amountms;
 }
