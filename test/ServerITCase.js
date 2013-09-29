@@ -66,6 +66,22 @@ describe('CountDown', function () {
                     done();
                 });
         });        
+
+        //TODO: - do proper UI tests
+        it('should work for HTML', function (done) {
+            request({url: url + '/to/Christmas/at/20131225', headers: { Accept: 'text/html'}},
+                function (error, response, body) {
+                    response.statusCode.should.eql(200);
+                    done();
+                });
+        });        
+        it('should work for HTML with tick', function (done) {
+            request({url: url + '/to/Christmas/at/20131225?tick=true', headers: { Accept: 'text/html'}},
+                function (error, response, body) {
+                    response.statusCode.should.eql(200);
+                    done();
+                });
+        });                
     });
 
     describe('#from', function () {
