@@ -16,8 +16,10 @@ function setValue(cnt) {
 								         amount.seconds)
 	$('.amount').text(text);	
 
-	if (contains(data.warning, cnt)) {
-		$('.warning').text('Warning - ');
+	var warning = contains(data.warning, cnt);
+	if (warning) {
+		$('body').css('background-color', warning.colour);
+		// $('.warning').text('Warning - ');
 	}
 }
 
@@ -33,13 +35,14 @@ function gotData(response) {
 	countDown.start()
 }
 
-function contains(items, item) {
+function contains(items, time) {
     for (var i=0,len=items.length; i < len; i++) {
-        if (items[i] == item) {
-            return true;
+    	var item = items[i];
+        if (item.ms == time) {
+            return item;
         }
     }    
-    return false;	
+    return undefined;	
 }
 
 $(document).ready(function () {
