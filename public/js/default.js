@@ -7,14 +7,18 @@ $(document).ready(function () {
         var params = {
 			target: 0,
 			cnt: data.remaining,
+			finished: function() {
+				$('.amount').text(data.msg);
+			},
 			setValue: function(cnt) {
 				var amount = core.parseAmount(cnt);
 				countdown.remaining = cnt;
-				$('.amount').text(core.getAmountReadable(amount.years, 
-												         amount.days, 
-												         amount.hours, 
-												         amount.minutes, 
-												         amount.seconds));
+				var text = core.getAmountReadable(amount.years, 
+											         amount.days, 
+											         amount.hours, 
+											         amount.minutes, 
+											         amount.seconds)
+				$('.amount').text(text);
 			}
         };
         var countDown = new CountDown(params);
