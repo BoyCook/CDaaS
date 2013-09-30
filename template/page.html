@@ -7,16 +7,16 @@
         <link rel="stylesheet" href="/css/default.css" type="text/css">
     </head>
     <body>
-		<section class="main">
-			<section class="counter">
-				<h1 class="amount">{{this.amountreadable}}</h1>
-			</section>
-			<section class="desc">
-                to go until <h5 class="event">{{this.event}}</h5>
+        <section class="timer">
+            <section class="container">
+                <h1 class="amount">{{this.amountreadable}}</h1>
+                {{#if this.event}}
+                    <h5 class="desc">to go until {{this.event}}</h5>
+                {{/if}}                             
                 {{#if this.date}}
-                    on {{this.datereadable}}
-                {{/if}}                
+                    <h5 class="desc">on {{this.datereadable}}</h5>
+                {{/if}}                                
             </section>
-		</section>
+        </section>
     </body>
 </html>
