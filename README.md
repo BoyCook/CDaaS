@@ -31,8 +31,8 @@ This is very much a work in progress at the moment so please bear with any issue
 * http://cdaas.herokuapp.com
 
 # Examples
-* Counting down to Christmas 2013: http://cdaas.co.uk/to/Christmas/at/20131225
-* Counting from 10 minutes to time a presentation: http://cdaas.co.uk/from/10/for/Presentation%20end
+* [Counting down to Christmas 2013](http://cdaas.co.uk/to/Christmas/at/20131225)
+* [Counting from 10 minutes to time a presentation](http://cdaas.co.uk/from/10/for/Presentation%20end?tick=true&unit=m&warning=1:yellow,0.5:red&msg=Please%20stop)
 
 ## Building
 * `make test` runs the tests
