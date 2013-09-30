@@ -9,11 +9,12 @@ CDaaS (CountDown as a Service) provides a RESTful service for creating countdown
 This is very much a work in progress at the moment so please bear with any issues.
 
 ## API
+* `/:timeamount` - countdown from an amount of time (default unit ms)
+* `/from/:timeamount` - countdown from an amount of time (default unit ms)
+* `/from/:timeamount/for/:event` - countdown from an amount of time (default unit ms) for an event
 * `/to/:date` - countdown to a date/time
 * `/to/:event/on/:date` - countdown to an event on a date/time
 * `/to/:event/at/:date` - countdown to an event at a date/time
-* `/from/:timeamount` - countdown from an amount of time (default unit ms)
-* `/from/:timeamount/for/:event` - countdown from an amount of time (default unit ms) for an event
 
 ## Params
 * `date` - date in format of `YYYYMMddHHmmss` e.g. `20130925181232` means `2013-09-25 18:12:32` - will be rounded to the nearest unit
