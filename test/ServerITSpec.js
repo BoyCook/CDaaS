@@ -82,7 +82,7 @@ describe('CountDown', function () {
                 });
         });        
         it('should work for HTML with tick', function (done) {
-            request({url: url + '/to/Christmas/at/20131225?tick=true', headers: { Accept: 'text/html'}},
+            request({url: url + '/to/Christmas/at/20131225?tick=false', headers: { Accept: 'text/html'}},
                 function (error, response, body) {
                     response.statusCode.should.eql(200);
                     done();
@@ -129,6 +129,126 @@ describe('CountDown', function () {
                     done();
                 });
         });
+        it('should work with params', function (done) {
+            request({url: url + '/from/10000?msg=End&warning=5:yellow,1:red', headers: { Accept: 'application/json'}},
+                function (error, response, body) {
+                    response.statusCode.should.eql(200);
+                    var data = JSON.parse(body);
+                    fixData(data);
+                    data.should.eql({
+                        date: "",
+                        event: "",
+                        unit: "ms",
+                        tick: "true",
+                        msg: "End",
+                        css: "",
+                        overflow: false,
+                        warning: [{
+                            "ms": 5,
+                            "colour": "yellow"
+                        }, {
+                            "ms": 1,
+                            "colour": "red"
+                        }]
+                    });
+                    done();
+                });
+        });
+        it('should work for year unit', function (done) {
+            request({url: url + '/from/1?unit=y', headers: { Accept: 'application/json'}},
+                function (error, response, body) {
+                    response.statusCode.should.eql(200);
+                    var data = JSON.parse(body);
+                    fixData(data);
+                    data.should.eql({
+                        date: "",
+                        event: "",
+                        unit: "y",
+                        tick: "true",
+                        msg: "Time is up:",
+                        css: "",
+                        overflow: false,
+                        warning: []
+                    });
+                    done();
+                });
+        });                
+        it('should work for day unit', function (done) {
+            request({url: url + '/from/1?unit=d', headers: { Accept: 'application/json'}},
+                function (error, response, body) {
+                    response.statusCode.should.eql(200);
+                    var data = JSON.parse(body);
+                    fixData(data);
+                    data.should.eql({
+                        date: "",
+                        event: "",
+                        unit: "d",
+                        tick: "true",
+                        msg: "Time is up:",
+                        css: "",
+                        overflow: false,
+                        warning: []
+                    });
+                    done();
+                });
+        });                
+        it('should work for hour unit', function (done) {
+            request({url: url + '/from/1?unit=h', headers: { Accept: 'application/json'}},
+                function (error, response, body) {
+                    response.statusCode.should.eql(200);
+                    var data = JSON.parse(body);
+                    fixData(data);
+                    data.should.eql({
+                        date: "",
+                        event: "",
+                        unit: "h",
+                        tick: "true",
+                        msg: "Time is up:",
+                        css: "",
+                        overflow: false,
+                        warning: []
+                    });
+                    done();
+                });
+        });                
+        it('should work for minute unit', function (done) {
+            request({url: url + '/from/1?unit=m', headers: { Accept: 'application/json'}},
+                function (error, response, body) {
+                    response.statusCode.should.eql(200);
+                    var data = JSON.parse(body);
+                    fixData(data);
+                    data.should.eql({
+                        date: "",
+                        event: "",
+                        unit: "m",
+                        tick: "true",
+                        msg: "Time is up:",
+                        css: "",
+                        overflow: false,
+                        warning: []
+                    });
+                    done();
+                });
+        });                
+        it('should work for second unit', function (done) {
+            request({url: url + '/from/1?unit=s', headers: { Accept: 'application/json'}},
+                function (error, response, body) {
+                    response.statusCode.should.eql(200);
+                    var data = JSON.parse(body);
+                    fixData(data);
+                    data.should.eql({
+                        date: "",
+                        event: "",
+                        unit: "s",
+                        tick: "true",
+                        msg: "Time is up:",
+                        css: "",
+                        overflow: false,
+                        warning: []
+                    });
+                    done();
+                });
+        });                                        
     });    
 });
 
