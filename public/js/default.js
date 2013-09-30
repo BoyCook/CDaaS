@@ -19,7 +19,6 @@ function setValue(cnt) {
 	var warning = contains(data.warning, cnt);
 	if (warning) {
 		$('body').css('background-color', warning.colour);
-		// $('.warning').text('Warning - ');
 	}
 }
 
