@@ -22,8 +22,8 @@ function setValue(cnt) {
 	}
 }
 
-function gotData(response) {
-	data = response;
+function gotData(res, status, xhr) {
+	data = res;
 	var params = {
 		target: 0,
 		cnt: data.remaining,
@@ -44,7 +44,14 @@ function contains(items, time) {
     return undefined;	
 }
 
+if(typeof String.prototype.trim !== 'function') {
+	String.prototype.trim = function() {
+		return this.replace(/^\s+|\s+$/g, '');
+	}
+}
+
 $(document).ready(function () {
 	core = new CDaaS();
-    $.getJSON(document.location.pathname + document.location.search, gotData);
+	$.ajaxSetup({ cache: false });
+    $.getJSON(document.location.pathname + document.location.search, gotData);   
 });
