@@ -7,10 +7,10 @@
     <meta name="keywords" content="CDaaS CountDown as a Service count down">
     <meta name="author" content="Craig Cook">    
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/default.css" type="text/css">
+    <link href="/css/default.css" rel="stylesheet"  type="text/css" media="screen" />
 </head>
 <body>
-    <article>
+    <article id="home">
         <h2>About</h2>
         <p>
             CDaaS (CountDown as a Service) provides a RESTful service for creating countdowns. This is very much a work in progress at the moment so please bear with any issues.
@@ -34,7 +34,7 @@
                 <code>timeamount</code> - time amount in ms
             </li>
             <li>
-                <code>unit</code> - the amount unit <code>[date|years|days|hours|minutes|seconds|milliseconds]</code> / <code>[dt|y|d|h|m|s|ms]</code>
+                <code>unit</code> - the amount unit <code class="too-big">[date|years|days|hours|minutes|seconds|milliseconds]</code> <p class="too-big">/</p> <code>[dt|y|d|h|m|s|ms]</code>
             </li>
             <li>
                 <code>msg</code> - the message to display when the countdown is complete (must have <code>tick=true</code>)
