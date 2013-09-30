@@ -21,7 +21,7 @@ describe('CountDown', function () {
                     data.should.eql({
                         date: "2013-12-25T00:00:00.000Z",
                         event: "",
-                        unit: "ms",
+                        unit: "s",
                         tick: "true",
                         msg: "Time is up:",
                         css: "",
@@ -41,7 +41,7 @@ describe('CountDown', function () {
                     data.should.eql({
                         date: "2013-12-25T00:00:00.000Z",
                         event: "Christmas",
-                        unit: "ms",
+                        unit: "s",
                         tick: "true",
                         msg: "Time is up:",
                         css: "",
@@ -61,7 +61,7 @@ describe('CountDown', function () {
                     data.should.eql({
                         date: "2013-12-25T00:00:00.000Z",
                         event: "Christmas",
-                        unit: "ms",
+                        unit: "s",
                         tick: "true",
                         msg: "Time is up:",
                         css: "",
@@ -100,7 +100,7 @@ describe('CountDown', function () {
                     data.should.eql({
                         date: "",
                         event: "",
-                        unit: "ms",
+                        unit: "s",
                         tick: "true",
                         msg: "Time is up:",
                         css: "",
@@ -119,7 +119,7 @@ describe('CountDown', function () {
                     data.should.eql({
                         date: "",
                         event: "End of meeting",
-                        unit: "ms",
+                        unit: "s",
                         tick: "true",
                         msg: "Time is up:",
                         css: "",
@@ -138,16 +138,16 @@ describe('CountDown', function () {
                     data.should.eql({
                         date: "",
                         event: "",
-                        unit: "ms",
+                        unit: "s",
                         tick: "true",
                         msg: "End",
                         css: "",
                         overflow: false,
                         warning: [{
-                            "ms": 5,
+                            "ms": 5000,
                             "colour": "yellow"
                         }, {
-                            "ms": 1,
+                            "ms": 1000,
                             "colour": "red"
                         }]
                     });
