@@ -21,9 +21,9 @@ This is very much a work in progress at the moment so please bear with any issue
 * `timeamount` - time amount in ms
 * `unit` - the amount unit `[date|years|days|hours|minutes|seconds|milliseconds]` or `[dt|y|d|h|m|s|ms]`
 * `msg` - the message to display when the countdown is complete (must have `tick=true`)
-* `tick` - [true|false] - (default is false) should the HTML page have an active countdown? 
+* `tick` - [true|false] - (default is `true`) should the HTML page have an active countdown? 
 * `css` - the URI for custom CSS to be applied to HTML
-* `overflow` - `[true|false]` - (default is false) should the active countdown keep going past zero?
+* `overflow` - `[true|false]` - (default is `false`) should the active countdown keep going past zero?
 * `warning` - (time amount(s) in ms) - warning(s) given when specified amount of time is remaining
 
 ## Service URIs
