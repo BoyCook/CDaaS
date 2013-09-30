@@ -11,83 +11,26 @@ describe('CountDown', function () {
         Server.shutDown(done);
     });
 
-    describe('#to', function () {
-        it('date should work', function (done) {
-            request({url: url + '/to/20131225', headers: { Accept: 'application/json'}},
+    describe('#/', function () {
+        it('time amount should work', function (done) {
+            request({url: url + '/10', headers: { Accept: 'application/json'}},
                 function (error, response, body) {
                     response.statusCode.should.eql(200);
                     var data = JSON.parse(body);
                     fixData(data);
                     data.should.eql({
-                        date: "2013-12-25T00:00:00.000Z",
+                        date: "",
                         event: "",
                         unit: "s",
                         tick: "true",
                         msg: "Time is up:",
                         css: "",
                         overflow: false,
-                        warning: [],                        
-                        datereadable: "2013-12-25 00:00:00"
+                        warning: []
                     });
                     done();
                 });
         });        
-        it('event at date should work', function (done) {
-            request({url: url + '/to/Christmas/at/20131225', headers: { Accept: 'application/json'}},
-                function (error, response, body) {
-                    response.statusCode.should.eql(200);
-                    var data = JSON.parse(body);
-                    fixData(data);
-                    data.should.eql({
-                        date: "2013-12-25T00:00:00.000Z",
-                        event: "Christmas",
-                        unit: "s",
-                        tick: "true",
-                        msg: "Time is up:",
-                        css: "",
-                        overflow: false,
-                        warning: [],
-                        datereadable: "2013-12-25 00:00:00"
-                    });
-                    done();
-                });
-        });
-        it('event on date should work', function (done) {
-            request({url: url + '/to/Christmas/on/20131225', headers: { Accept: 'application/json'}},
-                function (error, response, body) {
-                    response.statusCode.should.eql(200);
-                    var data = JSON.parse(body);
-                    fixData(data);
-                    data.should.eql({
-                        date: "2013-12-25T00:00:00.000Z",
-                        event: "Christmas",
-                        unit: "s",
-                        tick: "true",
-                        msg: "Time is up:",
-                        css: "",
-                        overflow: false,
-                        warning: [],
-                        datereadable: "2013-12-25 00:00:00"
-                    });
-                    done();
-                });
-        });        
-
-        //TODO: - do proper UI tests
-        it('should work for HTML', function (done) {
-            request({url: url + '/to/Christmas/at/20131225', headers: { Accept: 'text/html'}},
-                function (error, response, body) {
-                    response.statusCode.should.eql(200);
-                    done();
-                });
-        });        
-        it('should work for HTML with tick', function (done) {
-            request({url: url + '/to/Christmas/at/20131225?tick=false', headers: { Accept: 'text/html'}},
-                function (error, response, body) {
-                    response.statusCode.should.eql(200);
-                    done();
-                });
-        });                
     });
 
     describe('#from', function () {
@@ -249,7 +192,86 @@ describe('CountDown', function () {
                     done();
                 });
         });                                        
-    });    
+    }); 
+
+    describe('#to', function () {
+        it('date should work', function (done) {
+            request({url: url + '/to/20131225', headers: { Accept: 'application/json'}},
+                function (error, response, body) {
+                    response.statusCode.should.eql(200);
+                    var data = JSON.parse(body);
+                    fixData(data);
+                    data.should.eql({
+                        date: "2013-12-25T00:00:00.000Z",
+                        event: "",
+                        unit: "s",
+                        tick: "true",
+                        msg: "Time is up:",
+                        css: "",
+                        overflow: false,
+                        warning: [],                        
+                        datereadable: "2013-12-25 00:00:00"
+                    });
+                    done();
+                });
+        });        
+        it('event at date should work', function (done) {
+            request({url: url + '/to/Christmas/at/20131225', headers: { Accept: 'application/json'}},
+                function (error, response, body) {
+                    response.statusCode.should.eql(200);
+                    var data = JSON.parse(body);
+                    fixData(data);
+                    data.should.eql({
+                        date: "2013-12-25T00:00:00.000Z",
+                        event: "Christmas",
+                        unit: "s",
+                        tick: "true",
+                        msg: "Time is up:",
+                        css: "",
+                        overflow: false,
+                        warning: [],
+                        datereadable: "2013-12-25 00:00:00"
+                    });
+                    done();
+                });
+        });
+        it('event on date should work', function (done) {
+            request({url: url + '/to/Christmas/on/20131225', headers: { Accept: 'application/json'}},
+                function (error, response, body) {
+                    response.statusCode.should.eql(200);
+                    var data = JSON.parse(body);
+                    fixData(data);
+                    data.should.eql({
+                        date: "2013-12-25T00:00:00.000Z",
+                        event: "Christmas",
+                        unit: "s",
+                        tick: "true",
+                        msg: "Time is up:",
+                        css: "",
+                        overflow: false,
+                        warning: [],
+                        datereadable: "2013-12-25 00:00:00"
+                    });
+                    done();
+                });
+        });        
+
+        //TODO: - do proper UI tests
+        it('should work for HTML', function (done) {
+            request({url: url + '/to/Christmas/at/20131225', headers: { Accept: 'text/html'}},
+                function (error, response, body) {
+                    response.statusCode.should.eql(200);
+                    done();
+                });
+        });        
+        it('should work for HTML with tick', function (done) {
+            request({url: url + '/to/Christmas/at/20131225?tick=false', headers: { Accept: 'text/html'}},
+                function (error, response, body) {
+                    response.statusCode.should.eql(200);
+                    done();
+                });
+        });                
+    });       
 });
 
 function fixData(data) {
