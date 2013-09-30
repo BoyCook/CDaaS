@@ -5,6 +5,7 @@ body {
 	width: 95%;
 	margin-left: 15px;
 	margin-right: 15px;
+	font-family:  'proxima-nova',sans-serif /* font-family: Merriweather, Garamond, Georgia, serif font-family: 'freight-sans-pro',sans-serif font-family: 'lucida grande',tahoma,verdana,arial,sans-serif font-family: 'Lato', Arial, Verdana, sans-serif */	
 }
 
 .main {
