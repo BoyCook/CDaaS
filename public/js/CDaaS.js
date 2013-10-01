@@ -17,7 +17,7 @@ CDaaS.prototype.getAmountBetweenDates = function(now, then) {
 	return now - then;
 };
 
-CDaaS.prototype.parseAmount = function(amount) {
+CDaaS.prototype.parseMS = function(amount) {
     //TODO consider performance improvements
     var years = Math.floor(amount/this.one.year);
     var lessYears = amount - (this.one.year*years);

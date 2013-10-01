@@ -35,9 +35,9 @@ describe('CDaaS', function () {
         });                
     });
 
-    describe('#parseAmount', function () {
+    describe('#parseMS', function () {
         it('should work for years', function () {
-            var amount = core.parseAmount(57361325500);
+            var amount = core.parseMS(57361325500);
             amount.should.eql({ years: 1, days: 298, hours: 21, minutes: 42, seconds: 5, milliseconds: 500 });
         });
     });

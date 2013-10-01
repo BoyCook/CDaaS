@@ -7,7 +7,7 @@ function finished() {
 }
 
 function setValue(cnt) {
-	var amount = core.parseAmount(cnt);
+	var amount = core.parseMS(cnt);
 	data.remaining = cnt;
 	var text = core.getAmountReadable(amount.years, 
 								         amount.days, 
