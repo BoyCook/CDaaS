@@ -1,6 +1,6 @@
 
 body {
-	font-size: 100%;
+	/*font-size: 100%;*/
 	word-wrap: break-word;
 	font-family:  'proxima-nova',sans-serif /* font-family: Merriweather, Garamond, Georgia, serif font-family: 'freight-sans-pro',sans-serif font-family: 'lucida grande',tahoma,verdana,arial,sans-serif font-family: 'Lato', Arial, Verdana, sans-serif */	
 }
@@ -16,6 +16,8 @@ body {
 
 .timer h1 {
 	font-size: 4em;
+	margin: 0;
+	padding: 0;	
 }
 
 .container {
@@ -56,5 +58,18 @@ code {
 @media screen and (max-width: 568px) {
 	.too-big {
 		display: none;
+	}
+	.container {
+		font-size: 50%;
+	}
+}
+
+/* for 200px (v small) or less */
+@media screen and (max-width: 200px) {
+	.too-big {
+		display: none;
+	}
+	.container {
+		font-size: 20%;
 	}
 }
