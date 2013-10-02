@@ -70,6 +70,14 @@ CDaaS.prototype.getAmountReadable = function(years, days, hours, minutes, second
                                     seconds, 'second');
 };
 
+CDaaS.prototype.getAmountReadableShort = function(years, days, hours, minutes, seconds) {
+    return this._getAmountReadable(years, 'y', 
+                                    days, 'd',
+                                    hours, 'h',
+                                    minutes, 'm', 
+                                    seconds, 's');
+};
+
 CDaaS.prototype._getAmountReadable = function(years, yearsd, 
                                                 days, daysd, 
                                                 hours, hoursd,
@@ -95,10 +103,10 @@ CDaaS.prototype._getAmountReadable = function(years, yearsd,
 };
 
 CDaaS.prototype.timeUnit = function(i, unit) {
-    if (i == 1) {
-        return i + ' ' + unit + ' ';
-    } else if (this.units.indexOf(unit) > -1) {
+    if (i > 1 && this.units.indexOf(unit) > -1) {
         return i + ' ' + unit + 's ';
+    } else {
+        return i + ' ' + unit + ' ';
     }
 };
 
