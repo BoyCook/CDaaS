@@ -35,6 +35,13 @@ describe('CDaaS', function () {
         });                
     });
 
+    describe('#parseAmount', function () {
+        it('should work', function () {
+            // var amount = core.parseMS(57361325500);
+            // amount.should.eql();
+        });
+    });
+
     describe('#parseMS', function () {
         it('should work for years', function () {
             var amount = core.parseMS(57361325500);

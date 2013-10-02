@@ -17,6 +17,27 @@ CDaaS.prototype.getAmountBetweenDates = function(now, then) {
 	return now - then;
 };
 
+CDaaS.prototype.parseAmount = function(amount) {
+    /*
+        30
+        30 seconds
+        1 minute
+        1 minute 30
+        1 minute 30 seconds
+        1 minute and 30 seconds
+        1 hour 30 minutes
+        1 hour and 30 minutes
+        1 hour 30 minutes 10 seconds
+        1 hour 30 minutes and 10 seconds
+        etc...
+    */
+    // if (isNumber(amount)) {
+    //     return amount;
+    // } else {
+
+    // }
+};
+
 CDaaS.prototype.parseMS = function(amount) {
     //TODO consider performance improvements
     var years = Math.floor(amount/this.one.year);
@@ -41,21 +62,33 @@ CDaaS.prototype.parseMS = function(amount) {
 };
 
 CDaaS.prototype.getAmountReadable = function(years, days, hours, minutes, seconds) {
+    return this._getAmountReadable(years, 'year', 
+                                    days, 'day',
+                                    hours, 'hour',
+                                    minutes, 'minute', 
+                                    seconds, 'second');
+};
+
+CDaaS.prototype._getAmountReadable = function(years, yearsd, 
+                                                days, daysd, 
+                                                hours, hoursd,
+                                                minutes, minutesd,
+                                                seconds, secondsd) {
     var result = '';
     if (this.greaterThanZero(years)) {
-        result += this.timeUnit(years, 'year');
+        result += this.timeUnit(years, yearsd);
     }
     if (this.greaterThanZero(days)) {
-        result += this.timeUnit(days, 'day');
+        result += this.timeUnit(days, daysd);
     }    
     if (this.greaterThanZero(hours)) {
-        result += this.timeUnit(hours, 'hour');
+        result += this.timeUnit(hours, hoursd);
     }    
     if (this.greaterThanZero(minutes)) {
-        result += this.timeUnit(minutes, 'minute');
+        result += this.timeUnit(minutes, minutesd);
     }    
     if (this.greaterThanZero(seconds)) {
-        result += this.timeUnit(seconds, 'second');
+        result += this.timeUnit(seconds, secondsd);
     }        
     return result.trim();
 };
@@ -120,6 +153,14 @@ CDaaS.prototype.parseDate = function(date) {
         throw Error('Invalid date format [%s]', date);
     }
 
+};
+
+CDaaS.prototype.isString = function(v) {
+    return typeof v === "string"
+};
+
+CDaaS.prototype.isNumber = function(v) {
+    return typeof v === "number"
 };
 
 CDaaS.prototype.toFull = function(v) {
