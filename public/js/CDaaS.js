@@ -95,9 +95,9 @@ CDaaS.prototype._getAmountReadable = function(years, yearsd,
 };
 
 CDaaS.prototype.timeUnit = function(i, unit) {
-    if (i == 1 && this.units.indexOf(unit) > -1) {
+    if (i == 1) {
         return i + ' ' + unit + ' ';
-    } else {
+    } else if (this.units.indexOf(unit) > -1) {
         return i + ' ' + unit + 's ';
     }
 };
