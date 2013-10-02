@@ -17,9 +17,9 @@
         </p>
         <h2>API</h2>
         <ul>
-            <li><code>/:timeamount</code> - countdown from an amount of time (default unit ms)</li>
-            <li><code>/from/:timeamount</code> - countdown from an amount of time (default unit ms)</li>
-            <li><code>/from/:timeamount/for/:event</code> - countdown from an amount of time (default unit ms) for an event</li>            
+            <li><code>/:timeamount</code> - countdown from an amount of time (default unit seconds)</li>
+            <li><code>/from/:timeamount</code> - countdown from an amount of time (default unit seconds)</li>
+            <li><code>/from/:timeamount/for/:event</code> - countdown from an amount of time (default unit seconds) for an event</li>            
             <li><code>/to/:date</code> - countdown to a date/time</li>
             <li><code>/to/:event/on/:date</code> - countdown to an event on a date/time</li>
             <li><code>/to/:event/at/:date</code> - countdown to an event at a date/time</li>
@@ -32,7 +32,7 @@
             <li>
                 <code>event</code> - name of the event being counted down to</li>
             <li>
-                <code>timeamount</code> - time amount in ms
+                <code>timeamount</code> - time amount in seconds
             </li>
             <li>
                 <code>unit</code> - the amount unit <code class="too-big">[date|years|days|hours|minutes|seconds|milliseconds]</code> <p class="too-big">/</p> <code>[dt|y|d|h|m|s|ms]</code>
@@ -50,7 +50,7 @@
                 <code>overflow</code> - <code>[true|false]</code> - (default is <code>false</code>) should the active countdown keep going past zero?
             </li>
             <li>
-                <code>warning</code> - (time amount(s) in ms) - warning(s) given when specified amount of time is remaining
+                <code>warning</code> - (time amount(s) in seconds) - warning(s) given when specified amount of time is remaining
             </li>
         </ul>
         <h2>
