@@ -35,13 +35,6 @@ describe('CDaaS', function () {
         });                
     });
 
-    describe('#parseAmount', function () {
-        it('should work', function () {
-            // var amount = core.parseMS(57361325500);
-            // amount.should.eql();
-        });
-    });
-
     describe('#parseMS', function () {
         it('should work for years', function () {
             var amount = core.parseMS(57361325500);
@@ -167,6 +160,29 @@ describe('CDaaS', function () {
         });                
     });
 
+    describe('#getAmountReadableVeryShort', function () {
+        it('should include years', function () {
+            var readable = core.getAmountReadableVeryShort(1, 298, 21, 42, 5);
+            readable.should.eql('1:298:21:42:5');
+        });
+        it('should include days', function () {
+            var readable = core.getAmountReadableVeryShort(0, 2, 22, 42, 5);
+            readable.should.eql('2:22:42:5');
+        });        
+        it('should include hours', function () {
+            var readable = core.getAmountReadableVeryShort(0, 0, 2, 42, 5);
+            readable.should.eql('2:42:5');
+        });                
+        it('should include minutes', function () {
+            var readable = core.getAmountReadableVeryShort(0, 0, 0, 2, 5);
+            readable.should.eql('2:5');
+        });                            
+        it('should include seconds', function () {
+            var readable = core.getAmountReadableVeryShort(0, 0, 0, 0, 5);
+            readable.should.eql('5');
+        });                                 
+    });
+
     describe('#parseDate', function() {
         it('should work for up to seconds', function(){
             var expected = new Date('2013-09-25 15:01:02');
@@ -197,6 +213,11 @@ describe('CDaaS', function () {
             var expected = new Date('2013-01-01 00:00');
             var result = core.parseDate('2013');
             result.should.eql(expected);
-        });        
+        });
+        it('should fail for nonsense', function(){
+            (function(){
+                core.parseDate('1');
+            }).should.throw('Invalid date [1]');
+        });
     });    
 });

@@ -18,27 +18,6 @@ CDaaS.prototype.getAmountBetweenDates = function(now, then) {
 	return now - then;
 };
 
-CDaaS.prototype.parseAmount = function(amount) {
-    /*
-        30
-        30 seconds
-        1 minute
-        1 minute 30
-        1 minute 30 seconds
-        1 minute and 30 seconds
-        1 hour 30 minutes
-        1 hour and 30 minutes
-        1 hour 30 minutes 10 seconds
-        1 hour 30 minutes and 10 seconds
-        etc...
-    */
-    // if (isNumber(amount)) {
-    //     return amount;
-    // } else {
-
-    // }
-};
-
 CDaaS.prototype.parseMS = function(amount) {
     //TODO consider performance improvements
     var years = Math.floor(amount/this.one.year);
@@ -175,17 +154,9 @@ CDaaS.prototype.parseDate = function(date) {
                         date.substring(10, 12) + ':' + 
                         date.substring(12, 14));
     } else {
-        throw Error('Invalid date format [%s]', date);
+        throw new Error('Invalid date [' + date + ']');
     }
 
-};
-
-CDaaS.prototype.isString = function(v) {
-    return typeof v === "string"
-};
-
-CDaaS.prototype.isNumber = function(v) {
-    return typeof v === "number"
 };
 
 CDaaS.prototype.toFull = function(v) {
