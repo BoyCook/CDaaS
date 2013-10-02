@@ -12,6 +12,8 @@ This is very much a work in progress at the moment so please bear with any issue
 * `/:timeamount` - countdown from an amount of time (default unit seconds)
 * `/from/:timeamount` - countdown from an amount of time (default unit seconds)
 * `/from/:timeamount/for/:event` - countdown from an amount of time (default unit seconds) for an event
+* `/up/:timeamount` - countup to an amount of time (default unit seconds)
+* `/up/:timeamount/for/:event` - countup to an amount of time (default unit seconds) for an event
 * `/to/:date` - countdown to a date/time
 * `/to/:event/on/:date` - countdown to an event on a date/time
 * `/to/:event/at/:date` - countdown to an event at a date/time
