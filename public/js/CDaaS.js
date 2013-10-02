@@ -67,7 +67,7 @@ CDaaS.prototype.getAmountReadable = function(years, days, hours, minutes, second
                                     days, 'day',
                                     hours, 'hour',
                                     minutes, 'minute', 
-                                    seconds, 'second');
+                                    seconds, 'second', true, true);
 };
 
 CDaaS.prototype.getAmountReadableShort = function(years, days, hours, minutes, seconds) {
@@ -75,39 +75,55 @@ CDaaS.prototype.getAmountReadableShort = function(years, days, hours, minutes, s
                                     days, 'd',
                                     hours, 'h',
                                     minutes, 'm', 
-                                    seconds, 's');
+                                    seconds, 's', true, true);
+};
+
+CDaaS.prototype.getAmountReadableVeryShort = function(years, days, hours, minutes, seconds) {
+    return this._getAmountReadable(years, ':', 
+                                    days, ':',
+                                    hours, ':',
+                                    minutes, ':', 
+                                    seconds, '', false, false);
 };
 
 CDaaS.prototype._getAmountReadable = function(years, yearsd, 
                                                 days, daysd, 
                                                 hours, hoursd,
                                                 minutes, minutesd,
-                                                seconds, secondsd) {
+                                                seconds, secondsd,
+                                                space, single) {
+    var started = false;
     var result = '';
     if (this.greaterThanZero(years)) {
-        result += this.timeUnit(years, yearsd);
+        result += this.timeUnit(years, yearsd, space);
+        started = true;
     }
-    if (this.greaterThanZero(days)) {
-        result += this.timeUnit(days, daysd);
+    if (this.greaterThanZero(days) || (started && ! single)) {
+        result += this.timeUnit(days, daysd, space);
+        started = true;
     }    
-    if (this.greaterThanZero(hours)) {
-        result += this.timeUnit(hours, hoursd);
+    if (this.greaterThanZero(hours) || (started && ! single)) {
+        result += this.timeUnit(hours, hoursd, space);
+        started = true;
     }    
-    if (this.greaterThanZero(minutes)) {
-        result += this.timeUnit(minutes, minutesd);
+    if (this.greaterThanZero(minutes) || (started && ! single)) {
+        result += this.timeUnit(minutes, minutesd, space);
+        started = true;
     }    
-    if (this.greaterThanZero(seconds)) {
-        result += this.timeUnit(seconds, secondsd);
+    if (this.greaterThanZero(seconds) || (started && ! single)) {
+        result += this.timeUnit(seconds, secondsd, space);
     }        
     return result.trim();
 };
 
-CDaaS.prototype.timeUnit = function(i, unit) {
-    if (i > 1 && this.units.indexOf(unit) > -1) {
+CDaaS.prototype.timeUnit = function(i, unit, space) {
+    var isUnit = this.units.indexOf(unit) > -1;
+    if (i > 1 && isUnit == true) {
         return i + ' ' + unit + 's ';
     } else {
-        return i + ' ' + unit + ' ';
-    }
+        return space == true ? (i + ' ' + unit + ' ') : (i + unit);
+        // return i + unit;
+    }   
 };
 
 CDaaS.prototype.greaterThanZero = function(i) {

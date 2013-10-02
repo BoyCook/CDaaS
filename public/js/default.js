@@ -3,6 +3,7 @@ var data = undefined;
 
 function finished() {
 	$('.amount').text(data.msg);
+	$('title').text(data.msg);
 	$('.desc').html('');
 }
 
@@ -13,9 +14,14 @@ function setValue(cnt) {
 								         amount.days, 
 								         amount.hours, 
 								         amount.minutes, 
-								         amount.seconds)
+								         amount.seconds);
+	var shortText = core.getAmountReadableVeryShort(amount.years, 
+								         amount.days, 
+								         amount.hours, 
+								         amount.minutes, 
+								         amount.seconds);
+	$('title').text(shortText);
 	$('.amount').text(text);	
-
 	var warning = contains(data.warning, cnt);
 	if (warning) {
 		$('body').css('background-color', warning.colour);
