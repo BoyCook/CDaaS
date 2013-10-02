@@ -78,14 +78,14 @@ describe('CountDown', function () {
                 });
         });        
         it('time amount for event should work', function (done) {
-            request({url: url + '/from/10000/for/End of meeting', headers: { Accept: 'application/json'}},
+            request({url: url + '/from/10000/for/Egg is cooked', headers: { Accept: 'application/json'}},
                 function (error, response, body) {
                     response.statusCode.should.eql(200);
                     var data = JSON.parse(body);
                     fixData(data);
                     data.should.eql({
                         date: "",
-                        event: "End of meeting",
+                        event: "Egg is cooked",
                         unit: "s",
                         tick: "true",
                         msg: "Time is up:",
@@ -246,14 +246,14 @@ describe('CountDown', function () {
                 });
         });        
         it('time amount for event should work', function (done) {
-            request({url: url + '/up/10000/for/End of meeting', headers: { Accept: 'application/json'}},
+            request({url: url + '/up/10000/for/Egg is cooked', headers: { Accept: 'application/json'}},
                 function (error, response, body) {
                     response.statusCode.should.eql(200);
                     var data = JSON.parse(body);
                     fixData(data);
                     data.should.eql({
                         date: "",
-                        event: "End of meeting",
+                        event: "Egg is cooked",
                         unit: "s",
                         tick: "true",
                         msg: "Time is up:",
