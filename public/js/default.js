@@ -31,13 +31,13 @@ function setValue(cnt) {
 function gotData(res, status, xhr) {
 	data = res;
 	var params = {
-		target: 0,
-		cnt: data.remaining,
+		target: data.target,
+		cnt: data.cnt,
 		finished: finished,
 		setValue: setValue
 	};
-	var countDown = new CountDown(params);
-	countDown.start()
+	var timer = new Counter(params);
+	timer.start();
 }
 
 function contains(items, time) {

@@ -25,6 +25,7 @@ describe('CountDown', function () {
                         tick: "true",
                         msg: "Time is up:",
                         css: "",
+                        counter: "CountDown",
                         overflow: false,
                         warning: []
                     });
@@ -71,6 +72,7 @@ describe('CountDown', function () {
                         tick: "true",
                         msg: "Time is up:",
                         css: "",
+                        counter: "CountDown",
                         overflow: false,
                         warning: []
                     });
@@ -90,6 +92,7 @@ describe('CountDown', function () {
                         tick: "true",
                         msg: "Time is up:",
                         css: "",
+                        counter: "CountDown",
                         overflow: false,
                         warning: []
                     });
@@ -109,6 +112,7 @@ describe('CountDown', function () {
                         tick: "true",
                         msg: "End",
                         css: "",
+                        counter: "CountDown",
                         overflow: false,
                         warning: [{
                             "ms": 5000,
@@ -134,6 +138,7 @@ describe('CountDown', function () {
                         tick: "true",
                         msg: "Time is up:",
                         css: "",
+                        counter: "CountDown",
                         overflow: false,
                         warning: []
                     });
@@ -153,6 +158,7 @@ describe('CountDown', function () {
                         tick: "true",
                         msg: "Time is up:",
                         css: "",
+                        counter: "CountDown",
                         overflow: false,
                         warning: []
                     });
@@ -172,6 +178,7 @@ describe('CountDown', function () {
                         tick: "true",
                         msg: "Time is up:",
                         css: "",
+                        counter: "CountDown",
                         overflow: false,
                         warning: []
                     });
@@ -191,6 +198,7 @@ describe('CountDown', function () {
                         tick: "true",
                         msg: "Time is up:",
                         css: "",
+                        counter: "CountDown",
                         overflow: false,
                         warning: []
                     });
@@ -210,6 +218,7 @@ describe('CountDown', function () {
                         tick: "true",
                         msg: "Time is up:",
                         css: "",
+                        counter: "CountDown",
                         overflow: false,
                         warning: []
                     });
@@ -239,6 +248,7 @@ describe('CountDown', function () {
                         tick: "true",
                         msg: "Time is up:",
                         css: "",
+                        counter: "CountUp",
                         overflow: false,
                         warning: []
                     });
@@ -258,6 +268,7 @@ describe('CountDown', function () {
                         tick: "true",
                         msg: "Time is up:",
                         css: "",
+                        counter: "CountUp",
                         overflow: false,
                         warning: []
                     });
@@ -277,6 +288,7 @@ describe('CountDown', function () {
                         tick: "true",
                         msg: "End",
                         css: "",
+                        counter: "CountUp",
                         overflow: false,
                         warning: [{
                             "ms": 5000,
@@ -302,6 +314,7 @@ describe('CountDown', function () {
                         tick: "true",
                         msg: "Time is up:",
                         css: "",
+                        counter: "CountUp",
                         overflow: false,
                         warning: []
                     });
@@ -321,6 +334,7 @@ describe('CountDown', function () {
                         tick: "true",
                         msg: "Time is up:",
                         css: "",
+                        counter: "CountUp",
                         overflow: false,
                         warning: []
                     });
@@ -340,6 +354,7 @@ describe('CountDown', function () {
                         tick: "true",
                         msg: "Time is up:",
                         css: "",
+                        counter: "CountUp",
                         overflow: false,
                         warning: []
                     });
@@ -359,6 +374,7 @@ describe('CountDown', function () {
                         tick: "true",
                         msg: "Time is up:",
                         css: "",
+                        counter: "CountUp",
                         overflow: false,
                         warning: []
                     });
@@ -378,6 +394,7 @@ describe('CountDown', function () {
                         tick: "true",
                         msg: "Time is up:",
                         css: "",
+                        counter: "CountUp",
                         overflow: false,
                         warning: []
                     });
@@ -407,6 +424,7 @@ describe('CountDown', function () {
                         tick: "true",
                         msg: "Time is up:",
                         css: "",
+                        counter: "CountDown",
                         overflow: false,
                         warning: [],                        
                         datereadable: "2013-12-25 00:00:00"
@@ -427,6 +445,7 @@ describe('CountDown', function () {
                         tick: "true",
                         msg: "Time is up:",
                         css: "",
+                        counter: "CountDown",
                         overflow: false,
                         warning: [],
                         datereadable: "2013-12-25 00:00:00"
@@ -447,6 +466,7 @@ describe('CountDown', function () {
                         tick: "true",
                         msg: "Time is up:",
                         css: "",
+                        counter: "CountDown",
                         overflow: false,
                         warning: [],
                         datereadable: "2013-12-25 00:00:00"
@@ -479,4 +499,6 @@ function fixData(data) {
     delete data.remaining;
     delete data.amountreadable;
     delete data.amountms;
+    delete data.target;
+    delete data.cnt;
 }
