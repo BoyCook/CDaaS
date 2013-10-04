@@ -8,10 +8,23 @@
     <meta name="author" content="Craig Cook">    
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="/css/default.css" rel="stylesheet"  type="text/css" media="screen" />
+    <script type="text/javascript" src="/js/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.amount').keyup(function (e) {
+                if (e.keyCode == 13) {
+                    document.location.href = 'from/' + $('.amount').val();
+                }
+            });            
+        });
+    </script>    
 </head>
 <body>
     <section id="content">
-        <h1>FROM</h1>
+        <h2>CountDown as a Service makes it really simple for you to create a countdown</h2>
+        <section>
+            <label>CountDown from:</label> <input type="text" class="amount" value="30"/>
+        </section>
     </section>
 </body>
 </html>
