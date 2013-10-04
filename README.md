@@ -9,25 +9,26 @@ CDaaS (CountDown as a Service) provides a RESTful service for creating countdown
 This is very much a work in progress at the moment so please bear with any issues.
 
 ## API
-* `/:timeamount` - countdown from an amount of time (default unit seconds)
-* `/from/:timeamount` - countdown from an amount of time (default unit seconds)
-* `/from/:timeamount/for/:event` - countdown from an amount of time (default unit seconds) for an event
-* `/up/:timeamount` - countup to an amount of time (default unit seconds)
-* `/up/:timeamount/for/:event` - countup to an amount of time (default unit seconds) for an event
-* `/to/:date` - countdown to a date/time
-* `/to/:event/on/:date` - countdown to an event on a date/time
-* `/to/:event/at/:date` - countdown to an event at a date/time
+* `/:timeamount` countdown from an amount of time*
+* `/from/:timeamount` countdown from an amount of time*
+* `/from/:timeamount/for/:event` countdown from an amount of time* for an event
+* `/up/:timeamount` countup to an amount of time*
+* `/up/:timeamount/for/:event` countup to an amount of time* for an event
+* `/to/:date` countdown to a date/time
+* `/to/:event/on/:date` countdown to an event on a date/time
+* `/to/:event/at/:date` countdown to an event at a date/time
+* * Default time unit is seconds
 
 ## Params
-* `date` - date in format of `YYYYMMddHHmmss` e.g. `20130925181232` means `2013-09-25 18:12:32` - will be rounded to the nearest unit
-* `event` - name of the event being counted down to
-* `timeamount` - time amount in seconds
-* `unit` - the amount unit `[date|years|days|hours|minutes|seconds|milliseconds]` or `[dt|y|d|h|m|s|ms]`
-* `msg` - the message to display when the countdown is complete (must have `tick=true`)
-* `tick` - [true|false] - (default is `true`) should the HTML page have an active countdown? 
-* `css` - the URI for custom CSS to be applied to HTML
-* `overflow` - `[true|false]` - (default is `false`) should the active countdown keep going past zero?
-* `warning` - (time amount(s) in seconds) - warning(s) given when specified amount of time is remaining
+* `date` date in format of `YYYYMMddHHmmss` e.g. `20130925181232` means `2013-09-25 18:12:32` - will be rounded to the nearest unit
+* `event` name of the event being counted down to
+* `timeamount` time amount in seconds
+* `unit` the amount unit `[date|years|days|hours|minutes|seconds|milliseconds]` or `[dt|y|d|h|m|s|ms]`
+* `msg` the message to display when the countdown is complete (must have `tick=true`)
+* `tick` [true|false] (default is `true`) should the HTML page have an active countdown? 
+* `css` the URI for custom CSS to be applied to HTML
+* `overflow` `[true|false]` (default is `false`) should the active countdown keep going past zero?
+* `warning` warning(s) given when specified amount of time is remaining
 
 ## Service URIs
 * http://cdaas.co.uk
