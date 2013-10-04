@@ -15,8 +15,7 @@ This is very much a work in progress at the moment so please bear with any issue
 * `/up/:timeamount` countup to an amount of time*
 * `/up/:timeamount/for/:event` countup to an amount of time* for an event
 * `/to/:date` countdown to a date/time
-* `/to/:event/on/:date` countdown to an event on a date/time
-* `/to/:event/at/:date` countdown to an event at a date/time
+* `/to/:date/for/:event` countdown to a date/time for an event
 * * Default time unit is seconds
 
 ## Params
