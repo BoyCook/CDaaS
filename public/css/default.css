@@ -2,6 +2,7 @@
 body {
 	/*font-size: 100%;*/
 	word-wrap: break-word;
+	text-align: center;
 	font-family:  'proxima-nova',sans-serif /* font-family: Merriweather, Garamond, Georgia, serif font-family: 'freight-sans-pro',sans-serif font-family: 'lucida grande',tahoma,verdana,arial,sans-serif font-family: 'Lato', Arial, Verdana, sans-serif */	
 }
 
@@ -23,7 +24,6 @@ body {
 .container {
 	margin: 0;
 	padding: 0;
-	text-align: center;
 	width: 100%;
 	vertical-align: middle;
 	display: table-cell;	
@@ -52,6 +52,16 @@ code {
 #home li {
 	padding-top: 3px;
 	padding-bottom: 3px;
+}
+
+.apis {
+	width: 60%;
+	margin: auto;
+}
+
+.apis ul {
+	list-style-type: none;
+	text-align: left;	
 }
 
 /* for 568px (iPhone) or less */
