@@ -54,6 +54,11 @@ code {
 	padding-bottom: 3px;
 }
 
+.apis a {
+	text-decoration: none;
+	color: black;
+}
+
 .apis, .examples {
 	width: 60%;
 	margin: auto;
