@@ -10,64 +10,73 @@
     <link href="/css/default.css" rel="stylesheet"  type="text/css" media="screen" />
 </head>
 <body>
-    <section id="home">
-        <h2>About</h2>
-        <p>
+    <section id="home" class="api-page">
+        <nav>
+            <ul>
+                <li><a href="/from">/from</a></li>
+                <li><a href="/to">/to</a></li>                
+                <li><a href="/up">/up</a></li>                                
+                <li><a href="/api">/api</a></li>                                                
+            </ul>
+        </nav>        
+        <h5>
             CDaaS (CountDown as a Service) provides a RESTful service for creating countdowns. This is very much a work in progress at the moment so please bear with any issues.
-        </p>
-        <h2>API</h2>
-        <ul>
-            <li><code>/:timeamount</code> - countdown from an amount of time (default unit seconds)</li>
-            <li><code>/from/:timeamount</code> - countdown from an amount of time (default unit seconds)</li>
-            <li><code>/from/:timeamount/for/:event</code> - countdown from an amount of time (default unit seconds) for an event</li>            
-            <li><code>/up/:timeamount</code> - countup to an amount of time (default unit seconds)</li>
-            <li><code>/up/:timeamount/for/:event</code> - countup to an amount of time (default unit seconds) for an event</li>                        
-            <li><code>/to/:date</code> - countdown to a date/time</li>
-            <li><code>/to/:event/on/:date</code> - countdown to an event on a date/time</li>
-            <li><code>/to/:event/at/:date</code> - countdown to an event at a date/time</li>
-        </ul>
-        <h2>Params</h2>
-        <ul>
-            <li>
-                <code>date</code> - date in format of <code>YYYYMMddHHmmss</code> e.g. <code>20130925181232</code> means <code>2013-09-25 18:12:32</code>
-            </li>
-            <li>
-                <code>event</code> - name of the event being counted down to</li>
-            <li>
-                <code>timeamount</code> - time amount in seconds
-            </li>
-            <li>
-                <code>unit</code> - the amount unit <code class="too-big">[date|years|days|hours|minutes|seconds|milliseconds]</code> <p class="too-big">/</p> <code>[dt|y|d|h|m|s|ms]</code>
-            </li>
-            <li>
-                <code>msg</code> - the message to display when the countdown is complete (must have <code>tick=true</code>)
-            </li>
-            <li>
-                <code>tick</code> - <code>[true|false]</code> - (default is <code>true</code>) should the HTML page have an active countdown? 
-            </li>
-            <li>
-                <code>css</code> - the URI for custom CSS to be applied to HTML
-            </li>
-            <li>
-                <code>overflow</code> - <code>[true|false]</code> - (default is <code>false</code>) should the active countdown keep going past zero?
-            </li>
-            <li>
-                <code>warning</code> - (time amount(s) in seconds) - warning(s) given when specified amount of time is remaining
-            </li>
-        </ul>
-        <h2>
-            URIs
-        </h2>
-        <ul>
-            <li><a href="http://cdaas.co.uk" target="_blank">cdaas.co.uk</a></li>            
-            <li><a href="http://cdaas.herokuapp.com" target="_blank">Heroku Service</a></li>            
-            <li><a href="https://github.com/BoyCook/CDaaS" target="_blank">GitHub</a></li>
-        </ul>
-        <h2>Examples</h2>
-        <ul>
-            <li><a href="http://cdaas.co.uk/to/Christmas/at/20131225" target="_blank">Counting down to Christmas 2013</a></li>
-            <li><a href="http://cdaas.co.uk/from/10/for/Presentation%20end?tick=true&unit=m&warning=1:yellow,0.5:red&msg=Please%20stop" target="_blank">Counting from 10 minutes for a presentation</a></li>
-        </ul>        
+        </h5>
+        <section class="apis">    
+            <h2>API</h2>
+            <ul>
+                <li><code>/:timeamount</code> - countdown from an amount of time (default unit seconds)</li>
+                <li><code>/from/:timeamount</code> - countdown from an amount of time (default unit seconds)</li>
+                <li><code>/from/:timeamount/for/:event</code> - countdown from an amount of time (default unit seconds) for an event</li>            
+                <li><code>/up/:timeamount</code> - countup to an amount of time (default unit seconds)</li>
+                <li><code>/up/:timeamount/for/:event</code> - countup to an amount of time (default unit seconds) for an event</li>                        
+                <li><code>/to/:date</code> - countdown to a date/time</li>
+                <li><code>/to/:event/on/:date</code> - countdown to an event on a date/time</li>
+                <li><code>/to/:event/at/:date</code> - countdown to an event at a date/time</li>
+            </ul>
+            <h2>Params</h2>
+            <ul>
+                <li>
+                    <code>date</code> - date in format of <code>YYYYMMddHHmmss</code> e.g. <code>20130925181232</code> means <code>2013-09-25 18:12:32</code>
+                </li>
+                <li>
+                    <code>event</code> - name of the event being counted down to</li>
+                <li>
+                    <code>timeamount</code> - time amount in seconds
+                </li>
+                <li>
+                    <code>unit</code> - the amount unit <code class="too-big">[date|years|days|hours|minutes|seconds|milliseconds]</code> <p class="too-big">/</p> <code>[dt|y|d|h|m|s|ms]</code>
+                </li>
+                <li>
+                    <code>msg</code> - the message to display when the countdown is complete (must have <code>tick=true</code>)
+                </li>
+                <li>
+                    <code>tick</code> - <code>[true|false]</code> - (default is <code>true</code>) should the HTML page have an active countdown? 
+                </li>
+                <li>
+                    <code>css</code> - the URI for custom CSS to be applied to HTML
+                </li>
+                <li>
+                    <code>overflow</code> - <code>[true|false]</code> - (default is <code>false</code>) should the active countdown keep going past zero?
+                </li>
+                <li>
+                    <code>warning</code> - (time amount(s) in seconds) - warning(s) given when specified amount of time is remaining
+                </li>
+            </ul>
+            <h2>
+                URIs
+            </h2>
+            <ul>
+                <li><a href="http://cdaas.co.uk" target="_blank">cdaas.co.uk</a></li>            
+                <li><a href="http://cdaas.herokuapp.com" target="_blank">Heroku Service</a></li>            
+                <li><a href="https://github.com/BoyCook/CDaaS" target="_blank">GitHub</a></li>
+            </ul>
+            <h2>Examples</h2>
+            <ul>
+                <li><a href="http://cdaas.co.uk/to/Christmas/at/20131225" target="_blank">Counting down to Christmas 2013</a></li>
+                <li><a href="http://cdaas.co.uk/from/10/for/Presentation%20end?tick=true&unit=m&warning=1:yellow,0.5:red&msg=Please%20stop" target="_blank">Counting from 10 minutes for a presentation</a></li>
+            </ul>        
+        </section>        
     </section>
 </body>
 </html>

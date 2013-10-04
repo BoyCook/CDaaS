@@ -64,6 +64,41 @@ code {
 	text-align: left;	
 }
 
+nav ul {
+	list-style-type: none;
+}
+
+nav li {
+	display: inline;
+}
+
+nav a {
+	text-decoration: none;
+	color: blue;
+}
+
+nav a:hover {
+	text-decoration: underline;
+}
+
+nav li a {
+    position: relative;
+    display: inline-block;
+    text-decoration: none;
+    /*font-size: 15px;*/
+    line-height: 25px;
+    border: 4px solid #f8f8f8;
+    border-radius: 15px;
+    -moz-border-radius: 15px;
+    -webkit-border-radius: 15px;
+    z-index: 5;
+    padding-left: 10px;
+    padding-right: 10px;
+    color: #999;
+    /*font-weight: 600;*/
+    background-color: #fff;
+}
+
 /* for 568px (iPhone) or less */
 @media screen and (max-width: 568px) {
 	.too-big {
@@ -72,6 +107,10 @@ code {
 	.container {
 		font-size: 50%;
 	}
+	.apis {
+		width: 90%;
+		margin: auto;
+	}	
 }
 
 /* for 200px (v small) or less */
