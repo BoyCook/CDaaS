@@ -432,8 +432,8 @@ describe('CountDown', function () {
                     done();
                 });
         });        
-        it('event at date should work', function (done) {
-            request({url: url + '/to/Christmas/at/20131225', headers: { Accept: 'application/json'}},
+        it('date for event should work', function (done) {
+            request({url: url + '/to/20131225/for/Christmas', headers: { Accept: 'application/json'}},
                 function (error, response, body) {
                     response.statusCode.should.eql(200);
                     var data = JSON.parse(body);
@@ -453,38 +453,16 @@ describe('CountDown', function () {
                     done();
                 });
         });
-        it('event on date should work', function (done) {
-            request({url: url + '/to/Christmas/on/20131225', headers: { Accept: 'application/json'}},
-                function (error, response, body) {
-                    response.statusCode.should.eql(200);
-                    var data = JSON.parse(body);
-                    fixData(data);
-                    data.should.eql({
-                        date: "2013-12-25T00:00:00.000Z",
-                        event: "Christmas",
-                        unit: "s",
-                        tick: "true",
-                        msg: "Time is up:",
-                        css: "",
-                        counter: "CountDown",
-                        overflow: false,
-                        warning: [],
-                        datereadable: "2013-12-25 00:00:00"
-                    });
-                    done();
-                });
-        });        
-
         //TODO: - do proper UI tests
         it('should work for HTML', function (done) {
-            request({url: url + '/to/Christmas/at/20131225', headers: { Accept: 'text/html'}},
+            request({url: url + '/to/20131225/for/Christmas', headers: { Accept: 'text/html'}},
                 function (error, response, body) {
                     response.statusCode.should.eql(200);
                     done();
                 });
         });        
         it('should work for HTML with tick', function (done) {
-            request({url: url + '/to/Christmas/at/20131225?tick=false', headers: { Accept: 'text/html'}},
+            request({url: url + '/to/20131225/for/Christmas?tick=false', headers: { Accept: 'text/html'}},
                 function (error, response, body) {
                     response.statusCode.should.eql(200);
                     done();
