@@ -26,42 +26,40 @@
         <section class="apis">    
             <h2>API</h2>
             <ul>
-                <li><code>/:timeamount</code> - countdown from an amount of time (default unit seconds)</li>
-                <li><code>/from/:timeamount</code> - countdown from an amount of time (default unit seconds)</li>
-                <li><code>/from/:timeamount/for/:event</code> - countdown from an amount of time (default unit seconds) for an event</li>            
-                <li><code>/up/:timeamount</code> - countup to an amount of time (default unit seconds)</li>
-                <li><code>/up/:timeamount/for/:event</code> - countup to an amount of time (default unit seconds) for an event</li>                        
-                <li><code>/to/:date</code> - countdown to a date/time</li>
-                <li><code>/to/:event/on/:date</code> - countdown to an event on a date/time</li>
-                <li><code>/to/:event/at/:date</code> - countdown to an event at a date/time</li>
+                <li><code>/:timeamount</code> countdown from an amount of time* </li>
+                <li><code>/from/:timeamount</code> countdown from an amount of time*</li>
+                <li><code>/from/:timeamount/for/:event</code> countdown from an amount of time* for an event</li>            
+                <li><code>/up/:timeamount</code> countup for an amount of time</li>
+                <li><code>/up/:timeamount/for/:event</code> countup for an amount of time* for an event</li>                        
+                <li><code>/to/:date</code> countdown to a date/time</li>
+                <li><code>/to/:event/on/:date</code> countdown to an event on a date/time</li>
+                <li><code>/to/:event/at/:date</code> countdown to an event at a date/time</li>
+                <li>* Default time unit is seconds</li>
             </ul>
             <h2>Params</h2>
             <ul>
                 <li>
-                    <code>date</code> - date in format of <code>YYYYMMddHHmmss</code> e.g. <code>20130925181232</code> means <code>2013-09-25 18:12:32</code>
+                    <code>date</code> date in format of <code>YYYYMMddHHmmss</code> e.g. <code>20130925181232</code> means <code>2013-09-25 18:12:32</code>
+                </li>
+                <li><code>event</code> name of the event being counted down to</li>
+                <li><code>timeamount</code> time amount in seconds</li>
+                <li>
+                    <code>unit</code> the amount unit <code class="too-big">[years|days|hours|minutes|seconds|milliseconds]</code> <p class="too-big">/</p> <code>[y|d|h|m|s|ms]</code>
                 </li>
                 <li>
-                    <code>event</code> - name of the event being counted down to</li>
-                <li>
-                    <code>timeamount</code> - time amount in seconds
+                    <code>msg</code> the message to display when the countdown is complete (must have <code>tick=true</code>)
                 </li>
                 <li>
-                    <code>unit</code> - the amount unit <code class="too-big">[date|years|days|hours|minutes|seconds|milliseconds]</code> <p class="too-big">/</p> <code>[dt|y|d|h|m|s|ms]</code>
+                    <code>tick</code> <code>[true|false]</code> (default is <code>true</code>) active countdown for HTML page?
                 </li>
                 <li>
-                    <code>msg</code> - the message to display when the countdown is complete (must have <code>tick=true</code>)
+                    <code>css</code> URI for CSS to be applied to HTML
                 </li>
                 <li>
-                    <code>tick</code> - <code>[true|false]</code> - (default is <code>true</code>) should the HTML page have an active countdown? 
+                    <code>overflow</code> <code>[true|false]</code> (default is <code>false</code>) active countdown continue past zero?
                 </li>
                 <li>
-                    <code>css</code> - the URI for custom CSS to be applied to HTML
-                </li>
-                <li>
-                    <code>overflow</code> - <code>[true|false]</code> - (default is <code>false</code>) should the active countdown keep going past zero?
-                </li>
-                <li>
-                    <code>warning</code> - (time amount(s) in seconds) - warning(s) given when specified amount of time is remaining
+                    <code>warning</code> warning(s) given when specified amount of time is remaining
                 </li>
             </ul>
             <h2>
