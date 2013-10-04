@@ -50,6 +50,18 @@ function contains(items, time) {
     return undefined;	
 }
 
+function qsJSON() {
+	var qs = {};
+	if (document.location.search && document.location.search.length > 1) {
+		var params = document.location.search.substring(1).split('&');
+		for (var i=0,len=params.length; i<len; i++) {
+			var item = params[i].split('=');
+			qs[item[0]] = item[1];
+		}
+	}	
+	return qs;
+}
+
 if(typeof String.prototype.trim !== 'function') {
 	String.prototype.trim = function() {
 		return this.replace(/^\s+|\s+$/g, '');
@@ -59,5 +71,9 @@ if(typeof String.prototype.trim !== 'function') {
 $(document).ready(function () {
 	core = new CDaaS();
 	$.ajaxSetup({ cache: false });
+	var qs = qsJSON();
     $.getJSON(document.location.pathname + document.location.search, gotData);   
+	if (qs.discreet) {
+		document.location.search = '';
+	}    
 });
