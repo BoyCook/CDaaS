@@ -54,12 +54,12 @@ code {
 	padding-bottom: 3px;
 }
 
-.apis {
+.apis, .examples {
 	width: 60%;
 	margin: auto;
 }
 
-.apis ul {
+.apis ul, .examples ul {
 	list-style-type: none;
 	text-align: left;	
 }
@@ -100,17 +100,29 @@ nav li a {
     background-color: #fff;
 }
 
+/* for 768px (iPad mini) or less */
+@media screen and (max-width: 768px) {
+	body {
+		font-size: 90%;
+	}
+	.apis, .examples {
+		width: 70%;
+	}	
+}
+
 /* for 568px (iPhone) or less */
 @media screen and (max-width: 568px) {
+	body {
+		font-size: 70%;
+	}	
 	.too-big {
 		display: none;
 	}
 	.container {
 		font-size: 50%;
 	}
-	.apis {
+	.apis, .examples {
 		width: 90%;
-		margin: auto;
 	}	
 }
 
