@@ -22,82 +22,85 @@
         $(document).ready(function () {
             $('.amount').keyup(function (e) {
                 if (e.keyCode == 13) {
-                    document.location.href = $('.amount').val();
+                    go();
                 }
             });            
         });
+        function go() {
+            document.location.href = $('.amount').val();
+        }
     </script>    
 </head>
 <body>
-    <section id="home">
-        <nav>
-            <ul>
-                <li><a href="/">/home</a></li>
-                <li><a href="/from">/from</a></li>
-                <li><a href="/to">/to</a></li>                
-                <li><a href="/up">/up</a></li>                                
-                <li><a href="/api">/api</a></li>                                                
-            </ul>
-        </nav>
+    <nav>
+        <ul>
+            <li><a href="/">/home</a></li>
+            <li><a href="/from">/from</a></li>
+            <li><a href="/to">/to</a></li>                
+            <li><a href="/up">/up</a></li>                                
+            <li><a href="/api">/api</a></li>                                                
+        </ul>
+    </nav>
+    <header>
         <h1>Countdown to events or just time something</h1>
         <section>
-            <label>CountDown from:</label> <input type="text" class="amount" value="30"/>
-        </section>
-        <h3>Naviate to a URL to start your countdown:</h3>
-        <section class="apis">
-            <ul>
+            <label>CountDown /from</label> <input type="text" class="amount" value="30"/>
+        </section>            
+    </header>
+    <section class="examples">
+        <h3>It's easy, navigate to a URL to start your countdown:</h3>
+        <ul>
+            <li><a href="/to/20131225/for/Christmas" target="_blank">http://cdaas.co.uk/to/20131225/for/Christmas</a> <label>CountDown to Christmas 2013</label> </li>
+            <li><a href="/from/180/for/Egg%20Boiled" target="_blank">http://cdaas.co.uk/from/180/for/Egg Boiled</a> <label>Counting from 3 minutes for boiling an egg</label></li>
+        </ul>                    
+    </section>        
+    <section class="apis">
+        <ul>
+            <li>
                 <li>
-                    <li>
-                        <span class="url-prefix">http://cdaas.co.uk</span><a href="/"><code>/:timeamount</code></a>
-                    </li>
-                    <ul><li>countdown from an amount of time*</li></ul>
+                    <span class="url-prefix">http://cdaas.co.uk/</span><input type="text" class="amount" placeholder=":timeamount"/>
                 </li>
+                <ul><li>countdown from an amount of time*</li></ul>
+            </li>
+            <li>
                 <li>
-                    <li>
-                      <span class="url-prefix">http://cdaas.co.uk</span><a href="/from"><code>/from/:timeamount</code></a>   
-                    </li>
-                    <ul><li>countdown from an amount of time*</li></ul>
+                  <span class="url-prefix">http://cdaas.co.uk/from/</span><input type="text" class="amount" placeholder=":timeamount"/>
                 </li>
+                <ul><li>countdown from an amount of time*</li></ul>
+            </li>
+            <li>
                 <li>
-                    <li>
-                        <span class="url-prefix">http://cdaas.co.uk</span><a href="/from"><code>/from/:timeamount/for/:event</code></a>
-                    </li>
-                    <ul><li>countdown from an amount of time* for an event</li></ul>
+                    <span class="url-prefix">http://cdaas.co.uk/from/</span><input type="text" class="amount" placeholder=":timeamount/for/:event"/>
                 </li>
+                <ul><li>countdown from an amount of time* for an event</li></ul>
+            </li>
+            <li>
                 <li>
-                    <li>
-                        <span class="url-prefix">http://cdaas.co.uk</span><a href="/up"><code>/up/:timeamount</code></a>   
-                    </li>
-                    <ul><li>countup for an amount of time</li></ul>
+                    <span class="url-prefix">http://cdaas.co.uk/up/</span><input type="text" class="amount" placeholder=":timeamount"/>
                 </li>
+                <ul><li>countup for an amount of time</li></ul>
+            </li>
+            <li>
                 <li>
-                    <li>
-                        <span class="url-prefix">http://cdaas.co.uk</span><a href="/up"><code>/up/:timeamount/for/:event</code></a>                        
-                    </li>
-                    <ul><li>countup for an amount of time* for an event</li></ul>
-                </li>                                                
+                    <span class="url-prefix">http://cdaas.co.uk/up/</span><input type="text" class="amount" placeholder=":timeamount/for/:event"/>
+                </li>
+                
+                <ul><li>countup for an amount of time* for an event</li></ul>
+            </li>                                                
+            <li>
                 <li>
-                    <li>
-                        <span class="url-prefix">http://cdaas.co.uk</span><a href="/to"><code>/to/:date</code></a>
-                    </li>
-                    <ul><li>countdown to a date/time</li></ul>
-                </li>                                                
+                    <span class="url-prefix">http://cdaas.co.uk/to/</span><input type="text" class="amount" placeholder=":date"/>
+                </li>
+                <ul><li>countdown to a date/time</li></ul>
+            </li>                                                
+            <li>
                 <li>
-                    <li>
-                        <span class="url-prefix">http://cdaas.co.uk</span><a href="/to"><code>/to/:date/for/:event</code></a>
-                    </li>
-                    <ul><li>countdown to a date/time for an event</li></ul>
-                </li>                                                                                
-                <li>* Default time unit is seconds</li>
-            </ul>
-        </section>
-        <section class="examples">
-            <h5>Examples</h5>
-            <ul>
-                <li><a href="/to/20131225/for/Christmas" target="_blank">http://cdaas.co.uk/to/20131225/for/Christmas</a> <label>Counting down to Christmas 2013</label> </li>
-                <li><a href="/from/180/for/Egg%20Boiled" target="_blank">http://cdaas.co.uk/from/180/for/Egg Boiled</a> <label>Counting from 3 minutes for boiling an egg</label></li>
-            </ul>                    
-        </section>
+                    <span class="url-prefix">http://cdaas.co.uk/to/</span><input type="text" class="amount" placeholder=":date/for/:event"/>
+                </li>
+                <ul><li>countdown to a date/time for an event</li></ul>
+            </li>                                                                                
+            <li>* Default time unit is seconds</li>
+        </ul>
     </section>
 </body>
 </html>
