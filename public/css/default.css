@@ -5,7 +5,6 @@ body {
 	text-align: center;
 	margin: 0;
 	padding: 0;	
-	background-color: ivory;
 	font-family:  'proxima-nova',sans-serif /* font-family: Merriweather, Garamond, Georgia, serif font-family: 'freight-sans-pro',sans-serif font-family: 'lucida grande',tahoma,verdana,arial,sans-serif font-family: 'Lato', Arial, Verdana, sans-serif */	
 }
 
@@ -20,12 +19,15 @@ nav ul {
 	padding: 0;	
 }
 
-nav ul, header, header h1, .examples, .apis, footer {
+nav ul, header, header h1, .examples, .apis, footer, h3 {
 	margin: 0;
 }
 
-header, .examples, .apis {
-/*	background-color: #81C6DD;*/
+header {
+	background-color: #81C6DD;	
+}
+
+.examples, .apis {
 	background-color: ivory;
 }
 
@@ -72,7 +74,7 @@ body li {
 	color: black;
 }
 
-.apis, .examples, footer ul {
+.apis ul, .examples ul, footer ul {
 	width: 60%;
 	margin: auto;
 }
@@ -123,7 +125,7 @@ nav li a {
 	body {
 		font-size: 90%;
 	}
-	.apis, .examples {
+	.apis ul, .examples ul {
 		width: 70%;
 	}	
 }
@@ -136,14 +138,14 @@ nav li a {
 	.too-big {
 		display: none;
 	}
-	.apis, .examples {
+	.apis ul, .examples ul {
 		width: 100%;
 	}	
 }
 
 /* for 200px (v small) or less */
 @media screen and (max-width: 200px) {
-	.too-big {
-		display: none;
-	}
+	body {
+		font-size: 30%;
+	}	
 }
