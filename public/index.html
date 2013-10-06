@@ -58,56 +58,17 @@
         <ul>
             <li><a href="/to/20131225/for/Christmas" target="_blank">http://cdaas.co.uk/to/20131225/for/Christmas</a> <label>CountDown to Christmas 2013</label> </li>
             <li><a href="/from/180/for/Egg%20Boiled" target="_blank">http://cdaas.co.uk/from/180/for/Egg Boiled</a> <label>Counting from 3 minutes for boiling an egg</label></li>
+            <li><a href="/up/180/for/Egg%20Boiled" target="_blank">http://cdaas.co.uk/up/180/for/Egg Boiled</a> <label>Counting up to 3 minutes for boiling an egg</label></li>            
+            <li>See the full <a href="/api#api">API</a> for all the possibilities</li>
         </ul>                    
-    </section>        
-    <section class="apis">
+        <h3>You can also add some parameters to make things interesting:</h3>
         <ul>
-            <li>
-                <li>
-                    <span class="url-prefix">http://cdaas.co.uk/</span><input type="text" class="amount" placeholder=":timeamount"/>
-                </li>
-                <ul><li>countdown from an amount of time*</li></ul>
-            </li>
-            <li>
-                <li>
-                  <span class="url-prefix">http://cdaas.co.uk/from/</span><input type="text" class="amount" placeholder=":timeamount"/>
-                </li>
-                <ul><li>countdown from an amount of time*</li></ul>
-            </li>
-            <li>
-                <li>
-                    <span class="url-prefix">http://cdaas.co.uk/from/</span><input type="text" class="amount" placeholder=":timeamount/for/:event"/>
-                </li>
-                <ul><li>countdown from an amount of time* for an event</li></ul>
-            </li>
-            <li>
-                <li>
-                    <span class="url-prefix">http://cdaas.co.uk/up/</span><input type="text" class="amount" placeholder=":timeamount"/>
-                </li>
-                <ul><li>countup for an amount of time</li></ul>
-            </li>
-            <li>
-                <li>
-                    <span class="url-prefix">http://cdaas.co.uk/up/</span><input type="text" class="amount" placeholder=":timeamount/for/:event"/>
-                </li>
-                
-                <ul><li>countup for an amount of time* for an event</li></ul>
-            </li>                                                
-            <li>
-                <li>
-                    <span class="url-prefix">http://cdaas.co.uk/to/</span><input type="text" class="amount" placeholder=":date"/>
-                </li>
-                <ul><li>countdown to a date/time</li></ul>
-            </li>                                                
-            <li>
-                <li>
-                    <span class="url-prefix">http://cdaas.co.uk/to/</span><input type="text" class="amount" placeholder=":date/for/:event"/>
-                </li>
-                <ul><li>countdown to a date/time for an event</li></ul>
-            </li>                                                                                
-            <li>* Default time unit is seconds</li>
-        </ul>
+            <li><a href="/to/20131225/for/Christmas?msg=Merry Christmas" target="_blank">?msg=Merry Christmas</a> <label>Add "Merry Christmas" message</label> </li>
+            <li><a href="/from/180/for/Egg%20Boiled?warning=30:yellow,10:red" target="_blank">?warning=30:yellow,10:red</a> <label>Give a warning at 30 and 10 seconds</label></li>
+            <li>See the <a href="/api#params">params</a> section of the docs for all the possibilities</li>
+        </ul>                                    
     </section>
+    <!-- http://localhost:8080/api#params -->
     <footer>
         <ul>
             <li><span>Created by <a href="http://craigcook.com" target="_blank">Craig Cook</a></span></li>
