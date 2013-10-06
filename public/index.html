@@ -25,6 +25,9 @@
                     go();
                 }
             });            
+            $('#go').click(function(){
+                go();
+            });
         });
         function go() {
             document.location.href = $('.amount').val();
@@ -45,6 +48,7 @@
         <h1>Countdown to events or just time something</h1>
         <section>
             <label>CountDown /from</label> <input type="text" class="amount" value="30"/>
+            <button id="go">Go</button>
         </section>            
     </header>
     <section class="examples">
