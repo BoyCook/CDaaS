@@ -29,6 +29,7 @@ This is very much a work in progress at the moment so please bear with any issue
 * `overflow` `[true|false]` (default is `false`) should the active countdown keep going past zero?
 * `warning` warning(s) given when specified amount of time is remaining
 * `discreet` hide QS params for HTML 
+* `quiet` hide the params in the location bar
 
 ## Service URIs
 * http://cdaas.co.uk
