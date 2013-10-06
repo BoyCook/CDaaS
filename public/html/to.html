@@ -13,40 +13,55 @@
         $(document).ready(function () {
             $('.amount').keyup(function (e) {
                 if (e.keyCode == 13) {
-                    document.location.href = 'to/' + $('.amount').val();
+                    go();
                 }
             });            
+            $('#go').click(function(){
+                go();
+            });
         });
+        function go() {
+            document.location.href = $('.amount').val();
+        }
     </script>        
 </head>
 <body>
-    <section id="home">
-        <nav>
-            <ul>
-                <li><a href="/">/home</a></li>
-                <li><a href="/from">/from</a></li>
-                <li><a href="/to">/to</a></li>                
-                <li><a href="/up">/up</a></li>                                
-                <li><a href="/api">/api</a></li>                                                
-            </ul>
-        </nav>        
+    <nav>
+        <ul>
+            <li><a href="/">/home</a></li>
+            <li><a href="/from">/from</a></li>
+            <li><a href="/to">/to</a></li>                
+            <li><a href="/up">/up</a></li>                                
+            <li><a href="/api">/api</a></li>                                                
+            <li><a href="/api">/advanced</a></li>                                                
+        </ul>
+    </nav>        
+    <header>
         <h1>Countdown to events or just time something</h1>
         <section>
-            <label>CountDown to:</label> <input type="text" class="amount" value="20131225"/>
-        </section>
+            <label>CountDown /to:</label> <input type="text" class="amount" value="20131225"/>
+            <button id="go">Go</button>
+            <a href="/advanced">/advanced</a>
+        </section>            
+    </header>
+    <section class="examples">
         <h3>It's easy, navigate to a URL to start your countdown:</h3>
-        <section class="apis">
-            <ul>
-                <li><a href="/"><code>/:timeamount</code></a> countdown from an amount of time* </li>
-                <li><a href="/from"><code>/from/:timeamount</code></a> countdown from an amount of time*</li>
-                <li><a href="/from"><code>/from/:timeamount/for/:event</code></a> countdown from an amount of time* for an event</li>            
-                <li><a href="/up"><code>/up/:timeamount</code></a> countup for an amount of time</li>
-                <li><a href="/up"><code>/up/:timeamount/for/:event</code></a> countup for an amount of time* for an event</li>                        
-                <li><a href="/to"><code>/to/:date</code></a> countdown to a date/time</li>
-                <li><a href="/to"><code>/to/:date/for/:event</code></a> countdown to a date/time for an event</li>
-                <li>* Default time unit is seconds</li>
-            </ul>
-        </section>        
+        <ul>
+            <li><a href="/to/20131225/for/Christmas" target="_blank">http://cdaas.co.uk/to/20131225/for/Christmas</a> <label>CountDown to Christmas 2013</label> </li>
+            <li><a href="/from/180/for/Egg%20Boiled" target="_blank">http://cdaas.co.uk/from/180/for/Egg Boiled</a> <label>Counting from 3 minutes for boiling an egg</label></li>
+        </ul>                    
     </section>
+    <section class="apis">
+        <ul>
+            <li><a href="/"><code>/:timeamount</code></a> countdown from an amount of time* </li>
+            <li><a href="/from"><code>/from/:timeamount</code></a> countdown from an amount of time*</li>
+            <li><a href="/from"><code>/from/:timeamount/for/:event</code></a> countdown from an amount of time* for an event</li>            
+            <li><a href="/up"><code>/up/:timeamount</code></a> countup for an amount of time</li>
+            <li><a href="/up"><code>/up/:timeamount/for/:event</code></a> countup for an amount of time* for an event</li>                        
+            <li><a href="/to"><code>/to/:date</code></a> countdown to a date/time</li>
+            <li><a href="/to"><code>/to/:date/for/:event</code></a> countdown to a date/time for an event</li>
+            <li>* Default time unit is seconds</li>
+        </ul>
+    </section>        
 </body>
 </html>
