@@ -58,6 +58,11 @@ body li {
 	padding-bottom: 3px;
 }
 
+.api-head {
+	margin-left: 20px;
+	margin-right: 20px;
+}
+
 .apis a {
 	text-decoration: none;
 	color: black;
