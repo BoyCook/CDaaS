@@ -39,21 +39,55 @@
                 <li><a href="/api">/api</a></li>                                                
             </ul>
         </nav>
-        <h1>CountDown as a Service</h1>
+        <h1>Countdown to events or just time something</h1>
         <section>
             <label>CountDown from:</label> <input type="text" class="amount" value="30"/>
         </section>
-        <h3>Count down to events or just time something</h3>
+        <h3>Naviate to a URL to start your countdown:</h3>
         <section class="apis">
-            <h5>Available CountDown types:</h5>
             <ul>
-                <li><a href="/"><code>/:timeamount</code></a> countdown from an amount of time* </li>
-                <li><a href="/from"><code>/from/:timeamount</code></a> countdown from an amount of time*</li>
-                <li><a href="/from"><code>/from/:timeamount/for/:event</code></a> countdown from an amount of time* for an event</li>            
-                <li><a href="/up"><code>/up/:timeamount</code></a> countup for an amount of time</li>
-                <li><a href="/up"><code>/up/:timeamount/for/:event</code></a> countup for an amount of time* for an event</li>                        
-                <li><a href="/to"><code>/to/:date</code></a> countdown to a date/time</li>
-                <li><a href="/to"><code>/to/:date/for/:event</code></a> countdown to a date/time for an event</li>
+                <li>
+                    <li>
+                        <span class="url-prefix">http://cdaas.co.uk</span><a href="/"><code>/:timeamount</code></a>
+                    </li>
+                    <ul><li>countdown from an amount of time*</li></ul>
+                </li>
+                <li>
+                    <li>
+                      <span class="url-prefix">http://cdaas.co.uk</span><a href="/from"><code>/from/:timeamount</code></a>   
+                    </li>
+                    <ul><li>countdown from an amount of time*</li></ul>
+                </li>
+                <li>
+                    <li>
+                        <span class="url-prefix">http://cdaas.co.uk</span><a href="/from"><code>/from/:timeamount/for/:event</code></a>
+                    </li>
+                    <ul><li>countdown from an amount of time* for an event</li></ul>
+                </li>
+                <li>
+                    <li>
+                        <span class="url-prefix">http://cdaas.co.uk</span><a href="/up"><code>/up/:timeamount</code></a>   
+                    </li>
+                    <ul><li>countup for an amount of time</li></ul>
+                </li>
+                <li>
+                    <li>
+                        <span class="url-prefix">http://cdaas.co.uk</span><a href="/up"><code>/up/:timeamount/for/:event</code></a>                        
+                    </li>
+                    <ul><li>countup for an amount of time* for an event</li></ul>
+                </li>                                                
+                <li>
+                    <li>
+                        <span class="url-prefix">http://cdaas.co.uk</span><a href="/to"><code>/to/:date</code></a>
+                    </li>
+                    <ul><li>countdown to a date/time</li></ul>
+                </li>                                                
+                <li>
+                    <li>
+                        <span class="url-prefix">http://cdaas.co.uk</span><a href="/to"><code>/to/:date/for/:event</code></a>
+                    </li>
+                    <ul><li>countdown to a date/time for an event</li></ul>
+                </li>                                                                                
                 <li>* Default time unit is seconds</li>
             </ul>
         </section>

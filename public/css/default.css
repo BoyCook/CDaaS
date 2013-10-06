@@ -43,6 +43,10 @@ code {
 	font-size: 12px;	
 }
 
+.url-prefix {
+	color: grey;	
+}
+
 .too-big {
 	display: inline-block;	
 	padding: 0;
