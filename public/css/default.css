@@ -10,17 +10,14 @@ body {
 
 nav {
  	background-color: #90CA77;
- 	margin: 0;
- 	padding-top: 5px;
- 	padding-bottom: 5px;
 }
 
-nav ul {
-	padding: 0;	
-}
-
-nav ul, header, header h1, .examples, .apis, footer, h3 {
+nav, nav ul, header, header h1, .examples, .apis, footer, h3 {
 	margin: 0;
+ 	padding-top: 5px;
+ 	padding-bottom: 5px;	
+ 	padding-left: 0px;
+ 	padding-right: 0px;
 }
 
 header {
@@ -92,12 +89,12 @@ nav li {
 	display: inline;
 }
 
-nav a {
+nav a, header a {
 	text-decoration: none;
 	color: blue;
 }
 
-nav a:hover {
+nav a:hover, header a:hover {
 	text-decoration: underline;
 	color: blue;
 }
