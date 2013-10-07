@@ -35,8 +35,14 @@
                 go();
             });
         });
+        // $('.event').attr('placeholder', 'ss')
         function go() {
-            document.location.href = '/from/' + $('.amount').val();
+            var href = $('.action').val() + $('.amount').val();
+            var event = $('.event').val();
+            if (event.length > 0) {
+                href += '/for/' + event;
+            }
+            document.location.href = href;
         }
     </script>    
 </head>
@@ -53,33 +59,20 @@
     <header>
         <h1>Countdown to events or just time something</h1>
         <section>
-            <label>CountDown /from</label> <input type="text" class="amount" value="30"/>
+            <label>CountDown</label> 
+            <select class="action">
+                <option value="/from/">/from</option>
+                <option value="/to/">/to</option>
+                <option value="/up/">/up</option>
+            </select>
+            <input type="text" class="amount" placeholder="30"/>
+            <label>for</label> 
+            <input type="text" class="event" placeholder="Christmas"/>
             <button id="go">Go</button>
         </section>            
     </header>
     <section class="docs-list">
         <ul>
-            <li>
-                <span class="url-prefix">http://cdaas.co.uk/</span><input type="text" class="amount" placeholder=":timeamount"/>
-            </li>
-            <li>
-              <span class="url-prefix">http://cdaas.co.uk/from/</span><input type="text" class="amount" placeholder=":timeamount"/>
-            </li>
-            <li>
-                <span class="url-prefix">http://cdaas.co.uk/from/</span><input type="text" class="amount" placeholder=":timeamount/for/:event"/>
-            </li>
-            <li>
-                <span class="url-prefix">http://cdaas.co.uk/up/</span><input type="text" class="amount" placeholder=":timeamount"/>
-            </li>
-            <li>
-                <span class="url-prefix">http://cdaas.co.uk/up/</span><input type="text" class="amount" placeholder=":timeamount/for/:event"/>
-            </li>
-            <li>
-                <span class="url-prefix">http://cdaas.co.uk/to/</span><input type="text" class="amount" placeholder=":date"/>
-            </li>
-            <li>
-                <span class="url-prefix">http://cdaas.co.uk/to/</span><input type="text" class="amount" placeholder=":date/for/:event"/>
-            </li>                                                                            
             <li>* Default time unit is seconds</li>
             <li>See the full <a href="/api#api">API</a> for all the possibilities</li>
             <li>For more options see the <a href="/api#params">params</a> docs</li>            
