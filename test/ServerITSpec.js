@@ -12,26 +12,6 @@ describe('CountDown', function () {
     });
 
     describe('#/', function () {
-        it('time amount should work', function (done) {
-            request({url: url + '/10', headers: { Accept: 'application/json'}},
-                function (error, response, body) {
-                    response.statusCode.should.eql(200);
-                    var data = JSON.parse(body);
-                    fixData(data);
-                    data.should.eql({
-                        date: "",
-                        event: "",
-                        unit: "s",
-                        tick: "true",
-                        msg: "Time is up:",
-                        css: "",
-                        counter: "CountDown",
-                        overflow: false,
-                        warning: []
-                    });
-                    done();
-                });
-        });        
         it('should return HTML homepage', function (done) {
             request({url: url, headers: { Accept: 'text/html'}},
                 function (error, response, body) {
