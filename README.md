@@ -27,7 +27,7 @@ This is very much a work in progress at the moment so please bear with any issue
 * `tick` [true|false] (default is `true`) should the HTML page have an active countdown? 
 * `css` the URI for custom CSS to be applied to HTML
 * `overflow` `[true|false]` (default is `false`) should the active countdown keep going past zero?
-* `warning` warning(s) given when specified amount of time is remaining
+* `warning` warning(s) given when specified amount of time is remaining. Format `[amount]:[colour]` e.g. `30:yellow,10:red`
 * `discreet` hide QS params for HTML 
 * `quiet` hide the params in the location bar
 
