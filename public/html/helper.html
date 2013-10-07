@@ -25,13 +25,35 @@
         ga('send', 'pageview');
     </script>
     <script type="text/javascript">
+        var model = {
+            msg: {
+                type: 'String'
+            },
+            css: {
+                type: 'String'
+            },            
+            warning: {
+                type: 'JSON',
+                model: ['amount', 'colour']
+            },
+            overflow: {
+                type: 'Boolean'
+            },
+            tick: {
+                type: 'Boolean'
+            },
+            discreet: {
+                type: 'Boolean'
+            }
+        };
+
         $(document).ready(function () {
             $('.amount').keyup(function (e) {
                 if (e.keyCode == 13) {
                     go();
                 }
             });            
-            $('#go').click(function(){
+            $('#go').click(function() {
                 go();
             });
             $('.action').change(function(){
@@ -46,6 +68,11 @@
                     $('.amount').attr('placeholder', '5');
                     $('.event').attr('placeholder', 'Bed time');
                 }
+            });
+            $('.params').change(function(){
+                var param = $('.params').val();
+                var type = model[param];
+                alert(type.type);    
             });
         });
         function go() {
@@ -84,11 +111,18 @@
         </section>            
     </header>
     <section class="docs-list">
-        <ul>
-            <li>* Default time unit is seconds</li>
-            <li>See the full <a href="/api#api">API</a> for all the possibilities</li>
-            <li>For more options see the <a href="/api#params">params</a> docs</li>            
-        </ul>
+        <h3>Add some parameters:</h3>
+        <select class="params">
+            <option value="-1">-- select --</option>
+            <option value="msg">msg</option>
+            <option value="warning">warning</option>
+            <option value="css">css</option>
+            <option value="overflow">overflow</option>
+            <option value="tick">tick</option>
+            <option value="discreet">discreet</option>
+        </select>
+        <input type="text" class="param-value" />
+        <button id="addParam">Add</button>
     </section>
     <footer>
         <ul>
