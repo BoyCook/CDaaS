@@ -34,8 +34,20 @@
             $('#go').click(function(){
                 go();
             });
+            $('.action').change(function(){
+                var action = $('.action').val();
+                if (action === '/from/') {
+                    $('.amount').attr('placeholder', '180');
+                    $('.event').attr('placeholder', 'Egg boiled');
+                } else if (action === '/to/') {
+                    $('.amount').attr('placeholder', '20131225');
+                    $('.event').attr('placeholder', 'Christmas');
+                } else if (action === '/up/') {                    
+                    $('.amount').attr('placeholder', '5');
+                    $('.event').attr('placeholder', 'Bed time');
+                }
+            });
         });
-        // $('.event').attr('placeholder', 'ss')
         function go() {
             var href = $('.action').val() + $('.amount').val();
             var event = $('.event').val();
@@ -61,13 +73,13 @@
         <section>
             <label>CountDown</label> 
             <select class="action">
-                <option value="/from/">/from</option>
-                <option value="/to/">/to</option>
-                <option value="/up/">/up</option>
+                <option value="/from/">from</option>
+                <option value="/to/">to</option>
+                <option value="/up/">up</option>
             </select>
-            <input type="text" class="amount" placeholder="30"/>
+            <input type="text" class="amount" placeholder="180"/>
             <label>for</label> 
-            <input type="text" class="event" placeholder="Christmas"/>
+            <input type="text" class="event" placeholder="Egg Boiled"/>
             <button id="go">Go</button>
         </section>            
     </header>
