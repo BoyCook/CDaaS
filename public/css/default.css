@@ -28,6 +28,10 @@ header {
 	background-color: ivory;
 }
 
+.main-content {
+	min-height: 400px;
+}
+
 .api-head {
 	margin: 0;
  	padding-top: 10px;

@@ -46,6 +46,25 @@
                 type: 'Boolean'
             }
         };
+        function buildParamInput(sel) {
+            var type = model[sel];
+            if (type.type === "String") {
+                $('.param-values').html(buildStringInput(sel));
+            } else if (type.type === "Boolean") {
+                $('.param-values').html(buildBooleanInput(sel));
+            }
+        }
+
+        function buildStringInput(name) {
+            return "<input type=\"text\" class=\"" + name + "\" />";
+        }
+
+        function buildBooleanInput(name) {
+            return "<label>true</label>" +
+                   "<input type=\"radio\" name=\"" + name + "\" value=\"true\">" +
+                   "<label>false</label>" +
+                   "<input type=\"radio\" name=\"" + name + "\" value=\"false\">";
+        }
 
         $(document).ready(function () {
             $('.amount').keyup(function (e) {
@@ -65,14 +84,12 @@
                     $('.amount').attr('placeholder', '20131225');
                     $('.event').attr('placeholder', 'Christmas');
                 } else if (action === '/up/') {                    
-                    $('.amount').attr('placeholder', '5');
+                    $('.amount').attr('placeholder', '300');
                     $('.event').attr('placeholder', 'Bed time');
                 }
             });
             $('.params').change(function(){
-                var param = $('.params').val();
-                var type = model[param];
-                alert(type.type);    
+                buildParamInput($('.params').val());
             });
         });
         function go() {
@@ -110,7 +127,7 @@
             <button id="go">Go</button>
         </section>            
     </header>
-    <section class="docs-list">
+    <section class="docs-list main-content">
         <h3>Add some parameters:</h3>
         <select class="params">
             <option value="-1">-- select --</option>
@@ -121,7 +138,9 @@
             <option value="tick">tick</option>
             <option value="discreet">discreet</option>
         </select>
-        <input type="text" class="param-value" />
+        <section class="param-values">
+            
+        </section>
         <button id="addParam">Add</button>
     </section>
     <footer>
