@@ -8,99 +8,15 @@
     <meta name="author" content="Craig Cook">    
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="/css/default.css" rel="stylesheet"  type="text/css" media="screen" />
+    <script type="text/javascript" src="/js/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="/js/google.js"></script>
+    <script type="text/javascript" src="/js/default.js"></script>    
     <style type="text/css">
         nav a[href="/helper"] {
             color: darkgreen;
             font-weight: bold;
         }    
     </style>    
-    <script type="text/javascript" src="/js/jquery-1.10.2.min.js"></script>
-    <script>
-        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-        ga('create', 'UA-44619400-1', 'cdaas.co.uk');
-        ga('send', 'pageview');
-    </script>
-    <script type="text/javascript">
-        var model = {
-            msg: {
-                type: 'String'
-            },
-            css: {
-                type: 'String'
-            },            
-            warning: {
-                type: 'JSON',
-                model: ['amount', 'colour']
-            },
-            overflow: {
-                type: 'Boolean'
-            },
-            tick: {
-                type: 'Boolean'
-            },
-            discreet: {
-                type: 'Boolean'
-            }
-        };
-        function buildParamInput(sel) {
-            var type = model[sel];
-            if (type.type === "String") {
-                $('.param-values').html(buildStringInput(sel));
-            } else if (type.type === "Boolean") {
-                $('.param-values').html(buildBooleanInput(sel));
-            }
-        }
-
-        function buildStringInput(name) {
-            return "<input type=\"text\" class=\"" + name + "\" />";
-        }
-
-        function buildBooleanInput(name) {
-            return "<label>true</label>" +
-                   "<input type=\"radio\" name=\"" + name + "\" value=\"true\">" +
-                   "<label>false</label>" +
-                   "<input type=\"radio\" name=\"" + name + "\" value=\"false\">";
-        }
-
-        $(document).ready(function () {
-            $('.amount').keyup(function (e) {
-                if (e.keyCode == 13) {
-                    go();
-                }
-            });            
-            $('#go').click(function() {
-                go();
-            });
-            $('.action').change(function(){
-                var action = $('.action').val();
-                if (action === '/from/') {
-                    $('.amount').attr('placeholder', '180');
-                    $('.event').attr('placeholder', 'Egg boiled');
-                } else if (action === '/to/') {
-                    $('.amount').attr('placeholder', '20131225');
-                    $('.event').attr('placeholder', 'Christmas');
-                } else if (action === '/up/') {                    
-                    $('.amount').attr('placeholder', '300');
-                    $('.event').attr('placeholder', 'Bed time');
-                }
-            });
-            $('.params').change(function(){
-                buildParamInput($('.params').val());
-            });
-        });
-        function go() {
-            var href = $('.action').val() + $('.amount').val();
-            var event = $('.event').val();
-            if (event.length > 0) {
-                href += '/for/' + event;
-            }
-            document.location.href = href;
-        }
-    </script>    
 </head>
 <body>
     <nav>
@@ -121,9 +37,9 @@
                 <option value="/to/">to</option>
                 <option value="/up/">up</option>
             </select>
-            <input type="text" class="amount" placeholder="180"/>
+            <input type="text" class="amount" value="180"/>
             <label>for</label> 
-            <input type="text" class="event" placeholder="Egg Boiled"/>
+            <input type="text" class="event" value="Egg Boiled"/>
             <button id="go">Go</button>
         </section>            
     </header>

@@ -8,28 +8,15 @@
     <meta name="author" content="Craig Cook">    
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="/css/default.css" rel="stylesheet"  type="text/css" media="screen" />
+    <script type="text/javascript" src="/js/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="/js/google.js"></script>
+    <script type="text/javascript" src="/js/default.js"></script>    
     <style type="text/css">
         nav a[href="/up"] {
             color: darkgreen;
             font-weight: bold;
         }    
-    </style>    
-    <script type="text/javascript" src="/js/jquery-1.10.2.min.js"></script>
-    <script type="text/javascript">
-        $(document).ready(function () {
-            $('.amount').keyup(function (e) {
-                if (e.keyCode == 13) {
-                    go();
-                }
-            });            
-            $('#go').click(function(){
-                go();
-            });
-        });
-        function go() {
-            document.location.href = '/up/' + $('.amount').val();
-        }
-    </script>        
+    </style>        
 </head>
 <body>
     <nav>
@@ -44,7 +31,9 @@
     <header>
         <h1>Countdown to events or just time something</h1>
         <section>
-            <label>CountUp /up:</label> <input type="text" class="amount" value="30"/>
+            <label>CountUp /up:</label> 
+            <input type="text" class="amount" value="30"/>
+            <input type="hidden" class="action" value="/up/"/>
             <button id="go">Go</button>
             <a href="/helper">/helper</a>
         </section>            
