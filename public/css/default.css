@@ -129,6 +129,9 @@ nav li a {
 	.apis ul, .examples ul {
 		width: 70%;
 	}	
+	.main-content {
+		min-height: 300px;
+	}	
 }
 
 /* for 568px (iPhone) or less */
@@ -142,6 +145,9 @@ nav li a {
 	.apis ul, .examples ul {
 		width: 90%;
 	}	
+	.main-content {
+		min-height: 200px;
+	}		
 }
 
 /* for 200px (v small) or less */
