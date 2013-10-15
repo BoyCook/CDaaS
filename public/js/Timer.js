@@ -54,7 +54,7 @@ Timer.prototype.countDown = function() {
 };
 Timer.prototype.next = function() {
     this.setValue(this.cnt);
-    if (this.cnt == this.target) {
+    if (this.cnt === this.target) {
         if (this.finished) {
             this.finished();
         }

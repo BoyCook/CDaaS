@@ -38,7 +38,7 @@ CDaaS.prototype.parseMS = function(amount) {
         minutes: minutes,
         seconds: seconds,
         milliseconds: milliseconds
-    }
+    };
 };
 
 CDaaS.prototype.getAmountReadable = function(years, days, hours, minutes, seconds) {
@@ -97,10 +97,10 @@ CDaaS.prototype._getAmountReadable = function(years, yearsd,
 
 CDaaS.prototype.timeUnit = function(i, unit, space) {
     var isUnit = this.units.indexOf(unit) > -1;
-    if (i > 1 && isUnit == true) {
+    if (i > 1 && isUnit === true) {
         return i + ' ' + unit + 's ';
     } else {
-        return space == true ? (i + ' ' + unit + ' ') : (i + unit);
+        return space === true ? (i + ' ' + unit + ' ') : (i + unit);
         // return i + unit;
     }   
 };
@@ -120,32 +120,32 @@ CDaaS.prototype.getDateReadable = function(date) {
 
 CDaaS.prototype.parseDate = function(date) {
     //TODO: do this algorithmically
-    if (date.length == 4) {
+    if (date.length === 4) {
         //YYYY
         return new Date(date.substring(0, 4));
-    } else if (date.length == 6) {
+    } else if (date.length === 6) {
         //YYYYMM
         return new Date(date.substring(0, 4) + '-' + 
                         date.substring(4, 6) + '-01 00:00:00');
-    } else if (date.length == 8) {        
+    } else if (date.length === 8) {        
         //YYYYMMdd
         return new Date(date.substring(0, 4) + '-' + 
                         date.substring(4, 6) + '-' + 
                         date.substring(6, 8) + ' 00:00:00');
-    } else if (date.length == 10) {                
+    } else if (date.length === 10) {                
         //YYYYMMddHHmmss
         return new Date(date.substring(0, 4) + '-' + 
                         date.substring(4, 6) + '-' + 
                         date.substring(6, 8) + ' ' + 
                         date.substring(8, 10) + ':00:00');        
-    } else if (date.length == 12) {                        
+    } else if (date.length === 12) {                        
         //YYYYMMddHHmmss
         return new Date(date.substring(0, 4) + '-' + 
                         date.substring(4, 6) + '-' + 
                         date.substring(6, 8) + ' ' + 
                         date.substring(8, 10) + ':' + 
                         date.substring(10, 12) + ':00');        
-    } else if (date.length == 14) {                                
+    } else if (date.length === 14) {                                
         // Converts "YYYYMMddHHmmss" to "YYYY-MM-dd HH:mm:ss"
         return new Date(date.substring(0, 4) + '-' + 
                         date.substring(4, 6) + '-' + 
@@ -160,7 +160,7 @@ CDaaS.prototype.parseDate = function(date) {
 };
 
 CDaaS.prototype.toFull = function(v) {
-    if (v.length == 1) {
+    if (v.length === 1) {
         v = "0" + v;
     }
     return v;
