@@ -1,5 +1,6 @@
 [![Build Status](https://travis-ci.org/BoyCook/CDaaS.png?branch=master)](https://travis-ci.org/BoyCook/CDaaS)
 [![Coverage Status](https://coveralls.io/repos/BoyCook/CDaaS/badge.png)](https://coveralls.io/r/BoyCook/CDaaS)
+[![Code Climate](https://codeclimate.com/repos/525d68c4c7f3a31fc6004829/badges/fbbe5d3fcc6d5f861f27/gpa.png)](https://codeclimate.com/repos/525d68c4c7f3a31fc6004829/feed)
 [![Dependency Status](https://gemnasium.com/BoyCook/CDaaS.png)](https://gemnasium.com/BoyCook/CDaaS)
 
 [![NPM](https://nodei.co/npm/cdaas.png?downloads=true)](https://nodei.co/npm/cdaas) 
