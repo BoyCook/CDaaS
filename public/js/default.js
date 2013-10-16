@@ -51,7 +51,7 @@ function go() {
 
 $(document).ready(function () {
     $('.amount').keyup(function (e) {
-        if (e.keyCode == 13) {
+        if (e.keyCode === 13) {
             go();
         }
     });            
