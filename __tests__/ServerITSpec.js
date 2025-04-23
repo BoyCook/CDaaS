@@ -2,16 +2,16 @@ var should = require('should');
 var request = require('request');
 var url = 'http://localhost:8088';
 var Server = require('../lib/server');
-describe('CountDown', function () {
-    before(function (done) {
+describe('CountDown', () => {
+    beforeEach(function (done) {
         Server.startUp({ port: 8088 }, done);
     });
 
-    after(function (done) {
+    afterEach(function (done) {
         Server.shutDown(done);
     });
 
-    describe('#/', function () {
+    describe('#/', () => {
         it('should return HTML homepage', function (done) {
             request({url: url, headers: { Accept: 'text/html'}},
                 function (error, response, body) {
@@ -21,7 +21,7 @@ describe('CountDown', function () {
         });                
     });
 
-    describe('#api', function () {
+    describe('#api', () => {
         it('should return HTML page', function (done) {
             request({url: url + '/api', headers: { Accept: 'text/html'}},
                 function (error, response, body) {
@@ -31,7 +31,7 @@ describe('CountDown', function () {
         });                        
     });
 
-    describe('#from', function () {
+    describe('#from', () => {
         it('should return HTML search page', function (done) {
             request({url: url + '/from', headers: { Accept: 'text/html'}},
                 function (error, response, body) {
@@ -207,7 +207,7 @@ describe('CountDown', function () {
         });                                        
     }); 
 
-    describe('#up', function () {
+    describe('#up', () => {
         it('should return HTML search page', function (done) {
             request({url: url + '/up', headers: { Accept: 'text/html'}},
                 function (error, response, body) {
@@ -383,7 +383,7 @@ describe('CountDown', function () {
         });                                        
     }); 
 
-    describe('#to', function () {
+    describe('#to', () => {
         it('should return HTML search page', function (done) {
             request({url: url + '/to', headers: { Accept: 'text/html'}},
                 function (error, response, body) {
